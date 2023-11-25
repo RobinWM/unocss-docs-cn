@@ -244,7 +244,7 @@ const GITHUB_URL = '/unocss-docs-cn/'
 export default defineConfig({
   lang: 'zh-CN',
   title,
-  base: GITHUB_URL,
+  base: '',
   titleTemplate: title,
   description,
   outDir: './dist',
