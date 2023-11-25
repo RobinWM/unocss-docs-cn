@@ -247,7 +247,7 @@ export default defineConfig({
   base: '',
   titleTemplate: title,
   description,
-  outDir: './dist',
+  // outDir: './dist',
   locales: {
     root: {
       label: '简体中文',
