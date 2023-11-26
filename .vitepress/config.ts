@@ -333,14 +333,14 @@ export default defineConfig({
         }
       }
     },
-    editLink: {
-      pattern: 'https://github.com/unocss/unocss/edit/main/docs/:path',
-      text: '在 GitHub 上编辑此页'
-    },
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/unocss/unocss' },
-      { icon: 'discord', link: 'https://chat.antfu.me' }
-    ],
+    // editLink: {
+    //   pattern: 'https://github.com/unocss/unocss/edit/main/docs/:path',
+    //   text: '在 GitHub 上编辑此页'
+    // },
+    // socialLinks: [
+    //   { icon: 'github', link: 'https://github.com/unocss/unocss' },
+    //   { icon: 'discord', link: 'https://chat.antfu.me' }
+    // ],
     footer: {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2021-PRESENT Anthony Fu'
@@ -359,7 +359,7 @@ export default defineConfig({
   },
   buildEnd: async ({ outDir }) => {
     const sitemap = new SitemapStream({
-      hostname: 'https://alfred-skyblue.github.io/unocss-docs-cn/'
+      hostname: 'https://unocss.net/'
     })
     const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
     sitemap.pipe(writeStream)
