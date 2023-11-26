@@ -292,39 +292,39 @@ export default defineConfig({
         href: '/search.xml',
         title: 'UnoCSS'
       }
-    ],
-    [
-      'script',
-      {},
-      `
-      var _hmt = _hmt || [];
-      (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?dddf9b1f7df20582343829d3f5b97b55";
-      var s = document.getElementsByTagName("script")[0]; 
-      `
-    ],
-    [
-      'script',
-      {},
-      `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-B83KX738JN');
-      `
-    ],
-    [
-      'script',
-      {},
-      `
-      (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "jwntlndfhz");
-      `
     ]
+    // [
+    //   'script',
+    //   {},
+    //   `
+    //   var _hmt = _hmt || [];
+    //   (function() {
+    //   var hm = document.createElement("script");
+    //   hm.src = "https://hm.baidu.com/hm.js?dddf9b1f7df20582343829d3f5b97b55";
+    //   var s = document.getElementsByTagName("script")[0];
+    //   `
+    // ],
+    // [
+    //   'script',
+    //   {},
+    //   `
+    //   window.dataLayer = window.dataLayer || [];
+    //   function gtag(){dataLayer.push(arguments);}
+    //   gtag('js', new Date());
+    //   gtag('config', 'G-B83KX738JN');
+    //   `
+    // ],
+    // [
+    //   'script',
+    //   {},
+    //   `
+    //   (function(c,l,a,r,i,t,y){
+    //     c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    //     t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    //     y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    //   })(window, document, "clarity", "script", "jwntlndfhz");
+    //   `
+    // ]
   ],
   lastUpdated: true,
   cleanUrls: true,
