@@ -240,7 +240,6 @@ const SidebarConfig: DefaultTheme.SidebarItem[] = [
     link: '/guide/config-file'
   }
 ]
-const GITHUB_URL = '/unocss-docs-cn/'
 export default defineConfig({
   lang: 'zh-CN',
   title,
@@ -260,15 +259,12 @@ export default defineConfig({
     }
   },
   head: [
-    [
-      'link',
-      { rel: 'icon', href: `${GITHUB_URL}favicon.svg`, type: 'image/svg+xml' }
-    ],
+    ['link', { rel: 'icon', href: 'favicon.ico', type: 'image/svg+xml' }],
     [
       'link',
       {
         rel: 'alternate icon',
-        href: `${GITHUB_URL}favicon.ico`,
+        href: 'favicon.ico',
         type: 'image/png',
         sizes: '16x16'
       }
