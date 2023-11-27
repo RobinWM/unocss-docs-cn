@@ -273,17 +273,17 @@ export default defineConfig({
         sizes: '16x16'
       }
     ],
-    ['meta', { name: 'author', content: 'Anthony Fu' }],
+    // ['meta', { name: 'author', content: 'Anthony Fu' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { name: 'og:title', content: title }],
     ['meta', { name: 'og:description', content: description }],
     ['meta', { property: 'og:image', content: ogImage }],
-    ['meta', { name: 'twitter:title', content: title }],
-    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:image', content: ogImage }],
-    ['meta', { name: 'twitter:site', content: '@antfu7' }],
-    ['meta', { name: 'twitter:url', content: ogUrl }],
-    ['meta', { name: 'baidu-site-verification', content: 'codeva-KPIsekNiJb' }],
+    // ['meta', { name: 'twitter:title', content: title }],
+    // ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    // ['meta', { name: 'twitter:image', content: ogImage }],
+    // ['meta', { name: 'twitter:site', content: '@antfu7' }],
+    // ['meta', { name: 'twitter:url', content: ogUrl }],
+    ['meta', { name: 'baidu-site-verification', content: 'codeva-7qeOTJ5DFw' }],
     [
       'link',
       {
