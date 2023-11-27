@@ -279,7 +279,10 @@ export default defineConfig({
     // ['meta', { name: 'twitter:image', content: ogImage }],
     // ['meta', { name: 'twitter:site', content: '@antfu7' }],
     // ['meta', { name: 'twitter:url', content: ogUrl }],
-    ['meta', { name: 'baidu-site-verification', content: 'codeva-7qeOTJ5DFw' }],
+    [
+      'meta',
+      { name: 'baidu-site-verification', content: 'codeva-bMiqF2T9Vk"' }
+    ],
     [
       'link',
       {
