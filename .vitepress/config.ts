@@ -144,10 +144,10 @@ const Nav: DefaultTheme.NavItem[] = [
       }
     ]
   },
-  {
-    text: '关于本站',
-    link: '/about/'
-  },
+  // {
+  //   text: '关于本站',
+  //   link: '/about/'
+  // },
   { text: '交互式文档', link: `${ogUrl}interactive/`, target: '_blank' },
   { text: '演练场', link: `${ogUrl}play/`, target: '_blank' },
   {
