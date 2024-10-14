@@ -7,7 +7,7 @@ title: Svelte 提取器
 支持从 `class:` 指令中提取类。
 
 ```html
-<div class:text-orange-400="{foo}" />
+<div class:text-orange-400={foo} />
 ```
 
 将被提取为 `text-orange-400` 并生成：
@@ -25,18 +25,20 @@ title: Svelte 提取器
   pnpm add -D @unocss/extractor-svelte
   ```
   ```bash [yarn]
-  yarn add -D @unocss/extractor-sve
+  yarn add -D @unocss/extractor-svelte
   ```
   ```bash [npm]
-  npm install -D @unocss/extractor-sve
+  npm install -D @unocss/extractor-svelte
   ```
 :::
-```ts
-// uno.config.js
-import { defineConfig } from 'unocss'
+
+```ts [uno.config.ts]
 import extractorSvelte from '@unocss/extractor-svelte'
+import { defineConfig } from 'unocss'
 
 export default defineConfig({
-  extractors: [extractorSvelte()]
+  extractors: [
+    extractorSvelte(),
+  ],
 })
 ```

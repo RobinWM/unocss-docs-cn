@@ -1,69 +1,57 @@
 ---
 title: UnoCSS CDN 运行时
-description: CSS-in-JS runtime of UnoCSS (@unocss/runtime).
+description: UnoCSS 的 CSS-in-JS 运行时 (@unocss/runtime)。
 outline: deep
 ---
 
 # 运行时
 
-UnoCSS 运行时提供了一个 CDN 构建，可以在浏览器中运行 UnoCSS 引擎。它将检测 DOM 更改并动态生成样式。
+UnoCSS 运行时提供了一个可以在浏览器中直接运行 UnoCSS 的 CDN 构建。它将检测 DOM 变化并即时生成样式。
 
 ## 使用方法
 
-在您的 `index.html` 文件中添加以下代码：
+在你的 `index.html` 中添加以下行：
 
-```html
+```html [index.html]
 <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime"></script>
 ```
 
-配置 UnoCSS（可选）：
+可以通过在加载运行时之前定义配置来配置运行时：
 
 ```html
+<!-- 定义 unocss 选项... -->
 <script>
-  // 传递 unocss 选项
-  window.__unocss = {
-    rules: [
-      // 自定义规则...
-    ],
-    presets: [
-      // 自定义预设...
-    ]
-    // ...
-  }
+window.__unocss = {
+  rules: [
+    // 自定义规则...
+  ],
+  presets: [
+    // 自定义预设...
+  ],
+  // ...
+}
 </script>
+<!-- ... 然后加载运行时 -->
+<script src="https://cdn.jsdelivr.net/npm/@unocss/runtime"></script>
 ```
 
-默认情况下，将加载 [Uno 预设](/presets/uno)。
+默认情况下，将应用 [Uno 预设](/presets/uno)。
 
-运行时不包含预先设置的样式重置。如果您希望有样式重置，您可以添加自己的重置样式，或者使用来自 [Reset 包(/guide/style-reset)] 中的样式重置。
+运行时不包括预设样式重置，如果你想要样式重置，你可以添加自己的样式重置，或者使用来自 [重置包](/guide/style-reset) 的重置样式。
 
 ```html
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@unocss/reset/normalize.min.css"
-/>
-<!-- or -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css"
-/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unocss/reset/normalize.min.css">
+<!-- 或者 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css">
 ```
 
-## 构建
+## 构建版本
 
-针对不同的用例，提供了多个构建版本。
+有几种构建版本适用于不同的使用场景。
 
-### Core
+### Uno（默认）
 
-不包含任何预设：
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/core.global.js"></script>
-```
-
-### Uno (默认)
-
-包含 `@unocss/preset-uno` 预设:
+使用 `@unocss/preset-uno` 预设：
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/uno.global.js"></script>
@@ -71,7 +59,7 @@ UnoCSS 运行时提供了一个 CDN 构建，可以在浏览器中运行 UnoCSS 
 
 ### Attributify
 
-包含 `@unocss/preset-uno` 和 `@unocss/preset-attributify` 预设:
+使用 `@unocss/preset-uno` 和 `@unocss/preset-attributify` 预设：
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/attributify.global.js"></script>
@@ -79,13 +67,32 @@ UnoCSS 运行时提供了一个 CDN 构建，可以在浏览器中运行 UnoCSS 
 
 ### Mini
 
-包含 `@unocss/preset-mini` 和 `@unocss/preset-attributify` 预设:
+使用 `@unocss/preset-mini` 和 `@unocss/preset-attributify` 预设：
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/mini.global.js"></script>
 ```
 
-## 构建器使用方法
+### Core
+
+如果你需要混合匹配预设，你可以只加载核心运行时并手动指定预设。所有来自 UnoCSS 的[官方预设](/presets/#预设)都可用。在初始化核心运行时之前加载你需要的预设。
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/preset-icons.global.js"></script>
+<script>
+  window.__unocss = {
+    presets: [
+      () => window.__unocss_runtime.presets.presetIcons({
+        scale: 1.2,
+        cdn: 'https://esm.sh/'
+      }),
+    ],
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/core.global.js"></script>
+```
+
+## 打包器使用
 
 ```bash
 npm i @unocss/runtime
@@ -94,23 +101,44 @@ npm i @unocss/runtime
 ```ts
 import initUnocssRuntime from '@unocss/runtime'
 
-initUnocssRuntime({
-  /* options */
+initUnocssRuntime({ /* 选项 */ })
+```
+可以使用 `defaults` 属性提供 UnoCSS 配置：
+
+```ts
+import initUnocssRuntime from '@unocss/runtime'
+import config from './uno.config'
+
+initUnocssRuntime({ defaults: config })
+```
+
+预设可以从 `esm.sh` 导入：
+
+```ts
+import { defineConfig } from '@unocss/runtime'
+import presetIcons from 'https://esm.sh/@unocss/preset-icons/browser'
+import presetUno from 'https://esm.sh/@unocss/preset-uno'
+
+export default defineConfig({
+  presets: [presetUno(), presetIcons({ cdn: 'https://esm.sh/' })],
 })
 ```
 
 ## 防止 FOUC
 
-由于 UnoCSS 在 DOM 出现后运行，可能会出现 "无样式内容闪烁"（FOUC），导致用户看到页面无样式的情况。
+由于 UnoCSS 在 DOM 准备就绪后运行，可能会出现“未样式内容的闪烁”(FOUC)，这可能导致用户看到未样式化的页面。
 
-使用 `un-cloak` 属性和 CSS 规则，例如 `[un-cloak] { display: none }` 来隐藏无样式的元素，直到 UnoCSS 为它应用样式。
+使用 `un-cloak` 属性和诸如 `[un-cloak] { display: none }` 的 CSS 规则来隐藏未样式化的元素，直到 UnoCSS 为其应用样式。
 
-```css
-[un-cloak] {
-  display: none;
-}
-```
-
-```html
-<div class="text-blue-500" un-cloak>此文本将仅以蓝色显示。</div>
-```
+::: code-group
+  ```css
+  [un-cloak] {
+    display: none;
+  }
+  ```
+  ```html
+  <div class="text-blue-500" un-cloak>
+    这段文字只有在变成蓝色后才可见。
+  </div>
+  ```
+:::

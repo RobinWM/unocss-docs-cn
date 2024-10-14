@@ -1,40 +1,35 @@
 ---
 title: Next.js
-description: UnoCSS 和 Next.js 入门。
+description: 如何开始使用 UnoCSS 和 Next.js。
 ---
 
 # Next.js
 
-// TODO: link to examples
+// TODO: 链接到示例
 
-UnoCSS 和 Next.js 入门。
+开始使用 UnoCSS 和 Next.js。
 
 ## 设置
 
 ### 安装
 
 ::: code-group
-
-```bash [pnpm]
-pnpm add -D unocss @unocss/webpack
-```
-
-```bash [yarn]
-yarn add -D unocss @unocss/webpack
-```
-
-```bash [npm]
-npm install -D unocss @unocss/webpack
-```
-
+  ```bash [pnpm]
+  pnpm add -D unocss @unocss/webpack
+  ```
+  ```bash [yarn]
+  yarn add -D unocss @unocss/webpack
+  ```
+  ```bash [npm]
+  npm install -D unocss @unocss/webpack
+  ```
 :::
 
 ### 配置
 
-在项目根目录创建 `uno.config.ts`。
+在项目的根目录创建 `uno.config.ts`。
 
-```ts
-// uno.config.ts
+```ts [uno.config.ts]
 import {
   defineConfig,
   presetAttributify,
@@ -45,15 +40,15 @@ import {
 
 export default defineConfig({
   presets: [
-    presetUno()
+    presetUno(),
     // ...
-  ]
+  ],
 })
-```
+ ```
 
 ### 添加插件
 
-然后将 UnoCSS 添加为 webpack 的插件，通过 `next.config.js`。
+然后通过你的 `next.config.js` 将 UnoCSS 作为插件添加到 webpack 中。
 
 ```js{9}
 // next.config.js
@@ -73,16 +68,16 @@ const nextConfig = {
 module.exports = nextConfig
 ```
 
-### 导入样式
+### 导入样式表
 
 然后在 `_app.tsx` 中导入 `uno.css`。
 
 ```tsx
+import type { AppProps } from 'next/app'
 // _app.tsx
 import '@unocss/reset/tailwind.css'
-import 'uno.css'
 
-import type { AppProps } from 'next/app'
+import 'uno.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />
@@ -93,7 +88,7 @@ export default MyApp
 
 ## 使用
 
-使用 `unocss` 为您的组件添加样式！
+使用 unocss 为你的组件设置样式！
 
 ```tsx
 /* index.tsx */
@@ -101,9 +96,7 @@ const Home: NextPage = () => {
   return (
     <>
       <main className="py-20 px-12 text-center flex flex-col items-center gap-20px">
-        <span text="blue 5xl hover:red" cursor="default">
-          Nextjs
-        </span>
+        <span text="blue 5xl hover:red" cursor="default">Nextjs</span>
         <div className="i-carbon-car inline-block" text="4xl" />
         <button className="btn w-10rem">Button</button>
       </main>
@@ -112,9 +105,9 @@ const Home: NextPage = () => {
 }
 ```
 
-## 热更新
+## 热模块重载
 
-为了支持 HMR，您需要禁用 webpack 的缓存。
+为了支持 HMR，你需要选择退出 webpack 的缓存。
 
 ```js{5}
 // next.config.js
@@ -136,10 +129,10 @@ const nextConfig = {
 Error: ENOENT: no such file or directory, open '.../_virtual_/__uno.css'
 ```
 
-尝试删除 `.next` 目录并重新启动开发服务器。
+尝试删除 `.next` 目录并重启开发服务器。
 
-### 其他问题
+### 其他
 
-您可能需要将目标升级到至少 `es2015` 在您的 `tsconfig.json` 文件中以构建您的项目。
+你可能需要将 `tsconfig.json` 中的目标至少提升到 `es2015` 才能构建你的项目。
 
-默认情况下不支持扩展名为 .js 的文件。将您的文件扩展名更改为 .jsx 或尝试使用 `include: \.js` 在您的配置中包含 js 文件。 [了解更多](https://github.com/unocss/unocss#scanning)。
+默认不支持 `.js` 扩展名的文件。将文件扩展名改为 `.jsx` 或尝试在配置中包含 js 文件 `include: /\.js$/`。[了解更多](/guide/extracting#从构建工具管道中提取)。

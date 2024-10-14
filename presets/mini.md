@@ -1,64 +1,58 @@
 ---
 title: Mini 预设
-description: The minimal preset for UnoCSS (@unocss/preset-mini).
+description: UnoCSS 的基本预设 (@unocss/preset-mini)。
 outline: deep
 ---
 
 # Mini 预设
 
-这是 UnoCSS 的基本预设，仅包含最基本的实用工具。
+UnoCSS 的基本预设，仅包含最基本的工具类。
 
-[源码](https://github.com/unocss/unocss/tree/main/packages/preset-mini)
+[源代码](https://github.com/unocss/unocss/tree/main/packages/preset-mini)
 
 ## 安装
 
 ::: code-group
-
-```bash [pnpm]
-pnpm add -D @unocss/preset-mini
-```
-
-```bash [yarn]
-yarn add -D @unocss/preset-mini
-```
-
-```bash [npm]
-npm install -D @unocss/preset-mini
-```
-
+  ```bash [pnpm]
+  pnpm add -D @unocss/preset-mini
+  ```
+  ```bash [yarn]
+  yarn add -D @unocss/preset-mini
+  ```
+  ```bash [npm]
+  npm install -D @unocss/preset-mini
+  ```
 :::
 
-```ts
-// uno.config.ts
-import { defineConfig } from 'unocss'
+```ts [uno.config.ts]
 import presetMini from '@unocss/preset-mini'
+import { defineConfig } from 'unocss'
 
 export default defineConfig({
   presets: [
-    presetMini()
+    presetMini(),
     // ...other presets
-  ]
+  ],
 })
 ```
 
 ::: tip
-此预设已包含在 `unocss` 包中，您也可以从中导入它：
+此预设已包含在 `unocss` 包中，您也可以从那里导入：
 
 ```ts
 import { presetMini } from 'unocss'
 ```
-
 :::
 
 ## 规则
 
-此预设是 [`@unocss/preset-wind`](/presets/wind) 的子集，仅包含与 CSS 属性对齐的最基本实用工具，但不包括 Tailwind 中引入的有争议或复杂的实用工具（`container`、`animation`、`gradient` 等）。这可以是一个良好的起点，用于在熟悉的 Tailwind CSS 或 Windi CSS 工具类之上构建自己的自定义预设。
+该预设是 [`@unocss/preset-wind`](/presets/wind) 的子集，仅包含与 CSS 属性对齐的最基本的工具类，但不包括 Tailwind CSS 中引入的主观或复杂的工具类（`container`、`animation`、`gradient` 等）。这可以作为您自己的定制预设的起点，基于 Tailwind CSS 或 Windi CSS 中熟悉的工具类。
 
-## 特点
+## 特性
 
-### 暗黑模式
+### 深色模式
 
-默认情况下，此预设生成基于类的暗黑模式，并带有 `dark:` 变体。
+默认情况下，此预设生成基于类的深色模式，带有 `dark:` 变体。
 
 ```html
 <div class="dark:bg-red:10" />
@@ -68,11 +62,11 @@ import { presetMini } from 'unocss'
 
 ```css
 .dark .dark\:bg-red\:10 {
-  background-color: rgba(248, 113, 113, 0.1);
+  background-color: rgb(248 113 113 / 0.1);
 }
 ```
 
-要选择基于媒体查询的暗黑模式，您可以使用 `@dark:` 变体：
+要选择基于媒体查询的深色模式，您可以使用 `@dark:` 变体：
 
 ```html
 <div class="@dark:bg-red:10" />
@@ -81,12 +75,12 @@ import { presetMini } from 'unocss'
 ```css
 @media (prefers-color-scheme: dark) {
   .\@dark\:bg-red\:10 {
-    background-color: rgba(248, 113, 113, 0.1);
+    background-color: rgb(248 113 113 / 0.1);
   }
 }
 ```
 
-或使用 `dark:` 变体的全局配置设置
+或使用 `dark:` 变体的配置全局设置
 
 ```ts
 presetMini({
@@ -96,7 +90,7 @@ presetMini({
 
 ### CSS @layer
 
-支持 [CSS 的原生 @layer](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) 并使用变体 `layer-xx:`
+支持 [CSS 的原生 @layer](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) ，通过 `layer-xx:` 变体。
 
 ```html
 <div class="layer-foo:p4" />
@@ -120,9 +114,11 @@ presetMini({
 
 ### 主题
 
-您可以在您的配置中完全自定义主题属性，UnoCSS 最终将深度合并它到默认主题中。
+您可以在配置中完全自定义您的主题属性，UnoCSS 最终将其深度合并到默认主题中。
 
-<!--eslint-skip-->
+:::warning
+`breakpoints`属性不会被深度合并，而是会被覆盖，详见[断点](/config/theme#breakpoints)。
+:::
 
 ```ts
 presetMini({
@@ -131,68 +127,32 @@ presetMini({
     colors: {
       veryCool: '#0000ff', // class="text-very-cool"
       brand: {
-        primary: 'hsla(var(--hue, 217), 78%, 51%)' //class="bg-brand-primary"
+        primary: 'hsl(var(--hue, 217) 78% 51%)', // class="bg-brand-primary"
       }
-    }
+    },
   }
 })
 ```
 
-在规则中使用主题:
-
-```ts
-rules: [
-  [
-    /^text-(.*)$/,
-    ([, c], { theme }) => {
-      if (theme.colors[c]) return { color: theme.colors[c] }
-    }
-  ]
-]
-```
-
-::: warning
-需要注意的是，UnoCSS 允许用户完全控制 `breakpoints`。当提供自定义的 `breakpoints` 时，将覆盖默认值而不是合并。
-:::
-
-通过以下示例，您将只能使用 sm:和 md:断点变体：
-
-```ts
-presetMini({
-  theme: {
-    // ...
-    breakpoints: {
-      sm: '320px',
-      md: '640px'
-    }
-  }
-})
-```
-
-::: info
-`verticalBreakpoints` 与 `breakpoints` 相同，但是针对垂直布局。
-:::
-
-## Options
+## 选项
 
 ### dark
+- **类型：** `class | media | DarkModeSelectors`
+- **默认值：** `class`
 
-- **Type:** `class | media | DarkModeSelectors`
-- **Default:** `class`
-
-暗模式选项。它可以是 `class`、`media` 或自定义选择器对象(`DarkModeSelectors`)。
+深色模式选项。可以是 `class`、`media`，或自定义选择器对象(`DarkModeSelectors`)。
 
 ```ts
 interface DarkModeSelectors {
   /**
-   * 亮色主题选择器。
+   * 亮色变体的选择器。
    *
    * @default '.light'
    */
   light?: string
 
   /**
-   * 暗色主题选择器。
+   * 深色变体的选择器。
    *
    * @default '.dark'
    */
@@ -201,29 +161,27 @@ interface DarkModeSelectors {
 ```
 
 ### attributifyPseudo
+- **类型：** `Boolean`
+- **默认值：** `false`
 
-- **Type:** `Boolean`
-- **Default:** `false`
-
-生成伪选择器作为 `[group=""]` 而不是 `.group`。
+将伪类选择器生成为 `[group=""]`，而不是 `.group`。
 
 ### variablePrefix
+- **类型：** `string`
+- **默认值：**
 
-- **Type:** `string`
-- **Default:** `un-`
+`un-`
 
-CSS 变量的前缀。
+CSS 自定义属性的前缀。
 
 ### prefix
+- **类型：** `string | string[]`
+- **默认值：** `undefined`
 
-- **Type:** `string | string[]`
-- **Default:** `undefined`
-
-工具类前缀
+工具类前缀。
 
 ### preflight
+- **类型：** `boolean`
+- **默认值：** `true`
 
-- **Type:** `boolean`
-- **Default:** `true`
-
-生成预设样式。
+生成预设风格。

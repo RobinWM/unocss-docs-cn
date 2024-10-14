@@ -1,38 +1,33 @@
 ---
 title: Pug 提取器
-description: UnoCSS 的 Pug 提取器 (@unocssextractor-pug)
+description: UnoCSS 的 Pug 提取器 (@unocss/extractor-pug)
 ---
 
 # Pug 提取器
 
-UnoCSS 的 Pug 提取器: `@unocss/extractor-pug`。
+支持从 Pug 模板中提取类。
 
-## Installation
+## 安装
 
 ::: code-group
-
-```bash [pnpm]
-pnpm add -D @unocss/extractor-pug
-```
-
-```bash [yarn]
-yarn add -D @unocss/extractor-pug
-```
-
-```bash [npm]
-npm install -D @unocss/extractor-pug
-```
-
+  ```bash [pnpm]
+  pnpm add -D @unocss/extractor-pug
+  ```
+  ```bash [yarn]
+  yarn add -D @unocss/extractor-pug
+  ```
+  ```bash [npm]
+  npm install -D @unocss/extractor-pug
+  ```
 :::
 
-## 使用
-
-```ts
-import { defineConfig } from 'unocss'
-import { extractorSplit } from '@unocss/core'
+```ts [uno.config.ts]
 import extractorPug from '@unocss/extractor-pug'
+import { defineConfig } from 'unocss'
 
 export default defineConfig({
-  extractors: [extractorPug(), extractorSplit]
+  extractors: [
+    extractorPug(),
+  ],
 })
 ```

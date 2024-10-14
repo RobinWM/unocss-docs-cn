@@ -1,6 +1,6 @@
 ---
 title: 编译类转换器
-description: 将一组类编译为一个类 (@unocss/transformer-compile-class)
+description: 将一组类编译成一个类 (@unocss/transformer-compile-class)
 outline: deep
 ---
 
@@ -8,8 +8,7 @@ outline: deep
 
 <!-- @unocss-ignore -->
 
-
-将一组类编译成一个类。灵感来自于Windi CSS的[编译模式](https://windicss.org/posts/modes.html#compilation-mode)以及[@UltraCakeBakery](https://github.com/UltraCakeBakery)的[issue #948](https://github.com/unocss/unocss/issues/948)。
+将一组类编译成一个类。受到了 [Windi CSS 的编译模式](https://windicss.org/posts/modes.html#compilation-mode) 和 [@UltraCakeBakery](https://github.com/UltraCakeBakery) 的 [issue #948](https://github.com/unocss/unocss/issues/948) 的启发。
 
 ## 安装
 
@@ -25,10 +24,9 @@ outline: deep
   ```
 :::
 
-```ts
-// uno.config.ts
-import { defineConfig } from 'unocss'
+```ts [uno.config.ts]
 import transformerCompileClass from '@unocss/transformer-compile-class'
+import { defineConfig } from 'unocss'
 
 export default defineConfig({
   // ...
@@ -38,9 +36,17 @@ export default defineConfig({
 })
 ```
 
+::: tip
+这个预设包含在 `unocss` 包中，你也可以从包里导入它：
+
+```ts
+import { transformerCompileClass } from 'unocss'
+```
+:::
+
 ## 用法
 
-在类字符串的开头添加 `:uno:`，以将它们标记为编译对象。
+在类字符串的开头添加 `:uno:` 来标记它们进行编译。
 
 例如：
 
@@ -50,7 +56,7 @@ export default defineConfig({
 </div>
 ```
 
-将被编译成：
+将被编译为：
 
 ```html
 <div class="uno-qlmcrp">
@@ -69,7 +75,7 @@ export default defineConfig({
 }
 .uno-0qw2gr:hover {
   --un-text-opacity: 1;
-  color: rgba(248, 113, 113, var(--un-text-opacity));
+  color: rgb(248 113 113 / var(--un-text-opacity));
 }
 @media (min-width: 640px) {
   .uno-qlmcrp {
@@ -80,8 +86,25 @@ export default defineConfig({
 
 ## 选项
 
-您可以使用选项配置编译类的触发字符串和前缀。有关详细信息，请参考[类型](https://github.com/antfu/unocss/blob/main/packages/transformer-compile-class/src/index.ts#L4)。
+您可以使用选项配置编译类的触发字符串和前缀。有关详细信息，请参阅[类型定义](https://github.com/unocss/unocss/blob/main/packages/transformer-compile-class/src/index.ts#L4)。
 
-## License
+## 工具
 
-- MIT License &copy; 2021-PRESENT [Anthony Fu](https://github.com/antfu)
+### ESLint
+
+有一个 eslint 规则，用于在整个项目中强制执行类编译转换器：[@unocss/enforce-class-compile](https://unocss.dev/integrations/eslint#unocss-enforce-class-compile)
+
+**用法：**
+
+```json
+{
+  "plugins": ["@unocss"],
+  "rules": {
+    "@unocss/enforce-class-compile": "warn"
+  }
+}
+```
+
+## 许可证
+
+- MIT 许可证 &copy; 2021-PRESENT [Anthony Fu](https://github.com/antfu)

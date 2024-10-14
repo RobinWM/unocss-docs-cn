@@ -2,7 +2,7 @@
 
 ### 框架 / 工具
 
-UnoCSS 针对各种框架和工具提供了集成：
+UnoCSS 提供了针对各种框架/工具的集成：
 
 <ContentIntegrations />
 
