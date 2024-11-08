@@ -288,7 +288,8 @@ export default defineConfig({
         href: '/search.xml',
         title: 'UnoCSS'
       }
-    ]
+    ],
+    ['script', { src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4404202636462971', async: 'async', crossorigin: 'anonymous' }],
     // [
     //   'script',
     //   {},
