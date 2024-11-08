@@ -1,5 +1,5 @@
 ---
-title: UnoCSS Svelte 提取器指南 - 从 class: 指令中提取类
+title: UnoCSS Svelte 提取器指南 - 从 class指令中提取类
 description: 学习如何使用 UnoCSS Svelte 提取器，从 class: 指令中提取类并生成相应的 CSS，提升开发效率。
 head:
   - - meta
