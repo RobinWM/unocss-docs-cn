@@ -2,7 +2,7 @@
 title: UnoCSS 核心引擎使用指南
 description: 了解 UnoCSS 的核心引擎 (@unocss/core) 的安装与用法。
 head:
-  - - meta
+  -- meta
     - name: keywords
       content: UnoCSS, 核心引擎, 原子 CSS, 安装, 用法
 ---
