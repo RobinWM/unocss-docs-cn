@@ -1,6 +1,10 @@
 ---
-title: Next.js
-description: 如何开始使用 UnoCSS 和 Next.js。
+title: 使用 UnoCSS 和 Next.js - 安装与配置指南
+description: 学习如何在 Next.js 项目中开始使用 UnoCSS，包含安装和配置的详细步骤。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, Next.js, 安装, 配置, 热模块重载
 ---
 
 # Next.js
@@ -14,15 +18,19 @@ description: 如何开始使用 UnoCSS 和 Next.js。
 ### 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D unocss @unocss/webpack
-  ```
-  ```bash [yarn]
-  yarn add -D unocss @unocss/webpack
-  ```
-  ```bash [npm]
-  npm install -D unocss @unocss/webpack
-  ```
+
+```bash [pnpm]
+pnpm add -D unocss @unocss/webpack
+```
+
+```bash [yarn]
+yarn add -D unocss @unocss/webpack
+```
+
+```bash [npm]
+npm install -D unocss @unocss/webpack
+```
+
 :::
 
 ### 配置
@@ -40,11 +48,11 @@ import {
 
 export default defineConfig({
   presets: [
-    presetUno(),
+    presetUno()
     // ...
-  ],
+  ]
 })
- ```
+```
 
 ### 添加插件
 
@@ -96,7 +104,9 @@ const Home: NextPage = () => {
   return (
     <>
       <main className="py-20 px-12 text-center flex flex-col items-center gap-20px">
-        <span text="blue 5xl hover:red" cursor="default">Nextjs</span>
+        <span text="blue 5xl hover:red" cursor="default">
+          Nextjs
+        </span>
         <div className="i-carbon-car inline-block" text="4xl" />
         <button className="btn w-10rem">Button</button>
       </main>

@@ -1,6 +1,10 @@
 ---
-title: 规则
-description: Writing custom rules for UnoCSS is super easy.
+title: UnoCSS 规则指南 - 自定义你的 CSS 生成方式
+description: 学习如何为 UnoCSS 编写自定义规则，了解静态和动态规则的用法，提升你的 CSS 开发能力。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 规则, 自定义规则, 静态规则, 动态规则, CSS
 ---
 
 # 规则

@@ -1,3 +1,12 @@
+---
+title: UnoCSS 提取器指南 - 从源代码中提取工具使用情况
+description: 了解 UnoCSS 提取器的功能，学习如何自定义提取器以提取工具的使用情况，提升开发效率。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 提取器, 工具使用情况, 自定义提取器, 开发
+---
+
 # 提取器
 
 提取器用于从源代码中提取工具的使用情况。

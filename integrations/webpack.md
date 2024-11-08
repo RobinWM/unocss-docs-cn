@@ -1,6 +1,10 @@
 ---
-title: UnoCSS Webpack 插件
-description: UnoCSS 的 webpack 插件 (@unocss/webpack)。
+title: UnoCSS Webpack 插件 - 安装与使用指南
+description: 学习如何安装和配置 UnoCSS 的 Webpack 插件，以便于高效的原子 CSS 开发。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, Webpack, 插件, 安装, 使用
 outline: deep
 ---
 
@@ -15,27 +19,30 @@ UnoCSS 的 webpack 插件：`@unocss/webpack`。当前，此插件仅支持 [`gl
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/webpack
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/webpack
-  ```
-  ```bash [npm]
-  npm install -D @unocss/webpack
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/webpack
+```
+
+```bash [yarn]
+yarn add -D @unocss/webpack
+```
+
+```bash [npm]
+npm install -D @unocss/webpack
+```
+
 :::
 
 从 UnoCSS 版本 `v0.59.0` 开始，UnoCSS 已移至仅支持 ESM，您需要通过动态导入加载您的配置：
 
 ::: code-group
+
 ```ts [webpack 5]
 // webpack.config.js
 module.exports = function () {
   return import('@unocss/webpack').then(({ default: UnoCSS }) => ({
-    plugins: [
-      UnoCSS()
-    ],
+    plugins: [UnoCSS()],
     optimization: {
       realContentHash: true
     }
@@ -47,30 +54,28 @@ module.exports = function () {
 // webpack.config.js
 module.exports = function () {
   return import('@unocss/webpack').then(({ default: UnoCSS }) => ({
-    plugins: [
-      UnoCSS()
-    ],
+    plugins: [UnoCSS()],
     css: {
       extract: {
         filename: '[name].[hash:9].css'
-      },
-    },
+      }
+    }
   }))
 }
 ```
+
 :::
 
 如果您使用的是旧版本的 UnoCSS，则可以使用以下代码：
 
 ::: code-group
+
 ```ts [webpack 5]
 // webpack.config.js
 const UnoCSS = require('@unocss/webpack').default
 
 module.exports = {
-  plugins: [
-    UnoCSS()
-  ],
+  plugins: [UnoCSS()],
   optimization: {
     realContentHash: true
   }
@@ -82,9 +87,7 @@ module.exports = {
 const UnoCSS = require('@unocss/webpack').default
 
 module.exports = {
-  plugins: [
-    UnoCSS()
-  ],
+  plugins: [UnoCSS()],
   css: {
     extract: {
       filename: '[name].[hash:9].css'
@@ -92,6 +95,7 @@ module.exports = {
   }
 }
 ```
+
 :::
 
 创建一个 `uno.config.ts` 文件：
@@ -123,6 +127,7 @@ import 'uno.css'
 如果您使用 webpack 4/5 和 UnoCSS `v0.59.0`，您需要使用最新的 [Vue CLI Service](https://cli.vuejs.org/guide/cli-service.html) `v5.0.8` 来通过动态导入加载您的配置：
 
 ::: code-group
+
 ```ts [webpack 5]
 // vue.config.js
 const process = require('node:process')
@@ -131,9 +136,7 @@ module.exports = function () {
   return import('@unocss/webpack').then(({ default: UnoCSS }) => ({
     configureWebpack: {
       devtool: 'inline-source-map',
-      plugins: [
-        UnoCSS()
-      ],
+      plugins: [UnoCSS()],
       optimization: {
         realContentHash: true
       }
@@ -146,12 +149,13 @@ module.exports = function () {
       })
     },
     css: {
-      extract: process.env.NODE_ENV === 'development'
-        ? {
-            filename: 'css/[name].css',
-            chunkFilename: 'css/[name].css'
-          }
-        : true
+      extract:
+        process.env.NODE_ENV === 'development'
+          ? {
+              filename: 'css/[name].css',
+              chunkFilename: 'css/[name].css'
+            }
+          : true
     }
   }))
 }
@@ -164,9 +168,7 @@ const process = require('node:process')
 module.exports = function () {
   return import('@unocss/webpack').then(({ default: UnoCSS }) => ({
     configureWebpack: {
-      plugins: [
-        UnoCSS({})
-      ]
+      plugins: [UnoCSS({})]
     },
     chainWebpack(config) {
       config.module.rule('vue').uses.delete('cache-loader')
@@ -176,21 +178,24 @@ module.exports = function () {
       })
     },
     css: {
-      extract: process.env.NODE_ENV === 'development'
-        ? {
-            filename: '[name].css',
-            chunkFilename: '[name].[hash:9].css'
-          }
-        : true
+      extract:
+        process.env.NODE_ENV === 'development'
+          ? {
+              filename: '[name].css',
+              chunkFilename: '[name].[hash:9].css'
+            }
+          : true
     }
   }))
 }
 ```
+
 :::
 
 如果使用旧版本的 UnoCSS，则可以使用以下代码：
 
 ::: code-group
+
 ```ts [webpack 5]
 // vue.config.js
 const process = require('node:process')
@@ -199,9 +204,7 @@ const UnoCSS = require('@unocss/webpack').default
 module.exports = {
   configureWebpack: {
     devtool: 'inline-source-map',
-    plugins: [
-      UnoCSS()
-    ],
+    plugins: [UnoCSS()],
     optimization: {
       realContentHash: true
     }
@@ -214,13 +217,14 @@ module.exports = {
     })
   },
   css: {
-    extract: process.env.NODE_ENV === 'development'
-      ? {
-          filename: 'css/[name].css',
-          chunkFilename: 'css/[name].css'
-        }
-      : true
-  },
+    extract:
+      process.env.NODE_ENV === 'development'
+        ? {
+            filename: 'css/[name].css',
+            chunkFilename: 'css/[name].css'
+          }
+        : true
+  }
 }
 ```
 
@@ -231,25 +235,25 @@ const UnoCSS = require('@unocss/webpack').default
 
 module.exports = {
   configureWebpack: {
-    plugins: [
-      UnoCSS({}),
-    ]
+    plugins: [UnoCSS({})]
   },
   chainWebpack(config) {
     config.module.rule('vue').uses.delete('cache-loader')
     config.module.rule('tsx').uses.delete('cache-loader')
     config.merge({
-      cache: false,
+      cache: false
     })
   },
   css: {
-    extract: process.env.NODE_ENV === 'development'
-      ? {
-          filename: '[name].css',
-          chunkFilename: '[name].[hash:9].css',
-        }
-      : true,
-  },
+    extract:
+      process.env.NODE_ENV === 'development'
+        ? {
+            filename: '[name].css',
+            chunkFilename: '[name].[hash:9].css'
+          }
+        : true
+  }
 }
 ```
+
 :::

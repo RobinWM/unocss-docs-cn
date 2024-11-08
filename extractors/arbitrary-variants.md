@@ -1,5 +1,10 @@
 ---
-title: 任意变体提取器
+title: UnoCSS 任意变体提取器指南 - 支持实用程序的任意变体
+description: 了解 UnoCSS 的任意变体提取器，学习如何捕获实用程序的任意变体以提升开发效率。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 任意变体, 提取器, 实用程序, CSS 生成
 ---
 
 # 任意变体提取器
@@ -17,15 +22,19 @@ title: 任意变体提取器
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/extractor-arbitrary-variants
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/extractor-arbitrary-variants
-  ```
-  ```bash [npm]
-  npm install -D @unocss/extractor-arbitrary-variants
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/extractor-arbitrary-variants
+```
+
+```bash [yarn]
+yarn add -D @unocss/extractor-arbitrary-variants
+```
+
+```bash [npm]
+npm install -D @unocss/extractor-arbitrary-variants
+```
+
 :::
 
 ```ts [uno.config.ts]
@@ -33,8 +42,6 @@ import extractorArbitrary from '@unocss/extractor-arbitrary-variants'
 import { defineConfig } from 'unocss'
 
 export default defineConfig({
-  extractors: [
-    extractorArbitrary(),
-  ],
+  extractors: [extractorArbitrary()]
 })
 ```

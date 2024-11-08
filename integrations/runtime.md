@@ -1,6 +1,10 @@
 ---
-title: UnoCSS CDN 运行时
-description: UnoCSS 的 CSS-in-JS 运行时 (@unocss/runtime)。
+title: UnoCSS CDN 运行时 - CSS-in-JS 解决方案
+description: 了解 UnoCSS 的 CDN 运行时，如何在浏览器中即时生成样式并防止 FOUC。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, CDN, 运行时, CSS-in-JS, FOUC
 outline: deep
 ---
 
@@ -21,15 +25,15 @@ UnoCSS 运行时提供了一个可以在浏览器中直接运行 UnoCSS 的 CDN 
 ```html
 <!-- 定义 unocss 选项... -->
 <script>
-window.__unocss = {
-  rules: [
-    // 自定义规则...
-  ],
-  presets: [
-    // 自定义预设...
-  ],
-  // ...
-}
+  window.__unocss = {
+    rules: [
+      // 自定义规则...
+    ],
+    presets: [
+      // 自定义预设...
+    ]
+    // ...
+  }
 </script>
 <!-- ... 然后加载运行时 -->
 <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime"></script>
@@ -40,9 +44,15 @@ window.__unocss = {
 运行时不包括预设样式重置，如果你想要样式重置，你可以添加自己的样式重置，或者使用来自 [重置包](/guide/style-reset) 的重置样式。
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unocss/reset/normalize.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@unocss/reset/normalize.min.css"
+/>
 <!-- 或者 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css"
+/>
 ```
 
 ## 构建版本
@@ -82,11 +92,12 @@ window.__unocss = {
 <script>
   window.__unocss = {
     presets: [
-      () => window.__unocss_runtime.presets.presetIcons({
-        scale: 1.2,
-        cdn: 'https://esm.sh/'
-      }),
-    ],
+      () =>
+        window.__unocss_runtime.presets.presetIcons({
+          scale: 1.2,
+          cdn: 'https://esm.sh/'
+        })
+    ]
   }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/core.global.js"></script>
@@ -101,8 +112,11 @@ npm i @unocss/runtime
 ```ts
 import initUnocssRuntime from '@unocss/runtime'
 
-initUnocssRuntime({ /* 选项 */ })
+initUnocssRuntime({
+  /* 选项 */
+})
 ```
+
 可以使用 `defaults` 属性提供 UnoCSS 配置：
 
 ```ts
@@ -120,7 +134,7 @@ import presetIcons from 'https://esm.sh/@unocss/preset-icons/browser'
 import presetUno from 'https://esm.sh/@unocss/preset-uno'
 
 export default defineConfig({
-  presets: [presetUno(), presetIcons({ cdn: 'https://esm.sh/' })],
+  presets: [presetUno(), presetIcons({ cdn: 'https://esm.sh/' })]
 })
 ```
 
@@ -131,14 +145,15 @@ export default defineConfig({
 使用 `un-cloak` 属性和诸如 `[un-cloak] { display: none }` 的 CSS 规则来隐藏未样式化的元素，直到 UnoCSS 为其应用样式。
 
 ::: code-group
-  ```css
-  [un-cloak] {
-    display: none;
-  }
-  ```
-  ```html
-  <div class="text-blue-500" un-cloak>
-    这段文字只有在变成蓝色后才可见。
-  </div>
-  ```
+
+```css
+[un-cloak] {
+  display: none;
+}
+```
+
+```html
+<div class="text-blue-500" un-cloak>这段文字只有在变成蓝色后才可见。</div>
+```
+
 :::

@@ -1,3 +1,12 @@
+---
+title: UnoCSS 预设指南 - 自定义配置的最佳实践
+description: 探索 UnoCSS 预设的用法，学习如何编写和使用预设以增强你的配置灵活性。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 预设, 自定义配置, Preset, 开发
+---
+
 # 预设
 
 预设是将被合并到主配置中的部分配置。

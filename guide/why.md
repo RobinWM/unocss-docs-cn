@@ -1,4 +1,10 @@
 ---
+title: 为什么选择 UnoCSS？ - 动机与优势
+description: 探索 UnoCSS 的优势与动机，了解其与 Windi CSS 和 Tailwind CSS 的不同之处。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, Windi CSS, Tailwind CSS, 原子 CSS, 可扩展性
 outline: deep
 ---
 
@@ -12,7 +18,7 @@ outline: deep
 
 ### Windi CSS
 
-UnoCSS 是由 [Windi CSS](https://windicss.org/) 团队的一员发起的，从我们在 Windi CSS 中的工作获得了很多灵感。虽然 Windi CSS 自 2023 年 3 月起不再积极维护，但你可以将 UnoCSS 视为 Windi CSS 的 *"精神继承者"*。
+UnoCSS 是由 [Windi CSS](https://windicss.org/) 团队的一员发起的，从我们在 Windi CSS 中的工作获得了很多灵感。虽然 Windi CSS 自 2023 年 3 月起不再积极维护，但你可以将 UnoCSS 视为 Windi CSS 的 _"精神继承者"_。
 
 UnoCSS 继承了 Windi CSS 的按需特性、[属性化模式](/presets/attributify)、[快捷方式](/config/shortcuts)、[变体组](/transformers/variant-group)、[编译模式](/transformers/compile-class)等多种特性。此外，UnoCSS 从一开始就以最大的可扩展性和性能为目标构建，使我们能够引入如 [纯 CSS 图标](/presets/icons)、[无值属性化](/presets/attributify#valueless-attributify)、[标签化](/presets/tagify)、[网络字体](/presets/web-fonts) 等新功能。
 

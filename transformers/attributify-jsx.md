@@ -1,6 +1,10 @@
 ---
-title: 属性化 JSX 转换器
-description: 支持 JSX/TSX 中的无值属性化 (@unocss/transformer-attributify-jsx)。
+title: 属性化 JSX 转换器 - 支持无值属性化的 UnoCSS
+description: 了解如何在 JSX/TSX 中使用无值属性化 (@unocss/transformer-attributify-jsx)，提升你的开发效率
+head:
+  - meta:
+      name: keywords
+      content: 属性化, JSX, UnoCSS, 前端开发
 ---
 
 # 属性化 JSX 转换器
@@ -34,29 +38,40 @@ export function Component() {
 ```
 
 ::: details 没有此转换器，JSX 将无值属性视为布尔属性。
+
 ```jsx
 export function Component() {
   return (
-    <div text-red={true} text-center={true} text-5xl={true} animate-bounce={true}>
+    <div
+      text-red={true}
+      text-center={true}
+      text-5xl={true}
+      animate-bounce={true}
+    >
       unocss
     </div>
   )
 }
 ```
+
 :::
 
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/transformer-attributify-jsx
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/transformer-attributify-jsx
-  ```
-  ```bash [npm]
-  npm install -D @unocss/transformer-attributify-jsx
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/transformer-attributify-jsx
+```
+
+```bash [yarn]
+yarn add -D @unocss/transformer-attributify-jsx
+```
+
+```bash [npm]
+npm install -D @unocss/transformer-attributify-jsx
+```
+
 :::
 
 ```ts{11} [uno.config.ts]
@@ -74,12 +89,14 @@ export default defineConfig({
   ],
 })
 ```
+
 ::: tip
 这个预设包含在 `unocss` 包中，你也可以从包里导入它：
 
 ```ts
 import { transformerAttributifyJsx } from 'unocss'
 ```
+
 :::
 
 ## 注意事项
@@ -89,9 +106,11 @@ import { transformerAttributifyJsx } from 'unocss'
 :::
 
 ```html
-<div translate-x-100% /> <!-- 不能以 `%` 结尾 -->
+<div translate-x-100% />
+<!-- 不能以 `%` 结尾 -->
 
-<div translate-x-[100px] /> <!-- 不能包含 `[` 或 `]` -->
+<div translate-x-[100px] />
+<!-- 不能包含 `[` 或 `]` -->
 ```
 
 相反，您可能想要使用带有值的属性：
@@ -122,7 +141,5 @@ transformerAttributifyJsx({
 将被编译为：
 
 ```html
-<div text-red text-center text-5xl animate-bounce="">
-  unocss
-</div>
+<div text-red text-center text-5xl animate-bounce="">unocss</div>
 ```

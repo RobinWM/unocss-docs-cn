@@ -1,6 +1,10 @@
 ---
-title: 预检
-description: 您可以从配置中注入原始 css 作为预处理。 已解决的主题可用于自定义 css。
+title: UnoCSS 预检功能指南 - 注入原始 CSS 以增强样式
+description: 了解 UnoCSS 的预检功能，学习如何注入原始 CSS 作为预处理并利用主题自定义样式。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 预检, 原始 CSS, 主题, 自定义样式
 ---
 
 # 预检

@@ -1,6 +1,10 @@
 ---
-title: MDC 提取器
-description: UnoCSS 的 MDC 提取器 (@unocss/extractor-mdc)
+title: UnoCSS MDC 提取器指南 - 从 MDC 语法中提取类
+description: 了解 UnoCSS 的 MDC 提取器 (@unocss/extractor-mdc)，学习如何从 MDC 语法中提取类，提升开发效率。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, MDC, 提取器, Markdown Components, CSS 生成
 ---
 
 # MDC 提取器
@@ -10,15 +14,19 @@ description: UnoCSS 的 MDC 提取器 (@unocss/extractor-mdc)
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/extractor-mdc
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/extractor-mdc
-  ```
-  ```bash [npm]
-  npm install -D @unocss/extractor-mdc
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/extractor-mdc
+```
+
+```bash [yarn]
+yarn add -D @unocss/extractor-mdc
+```
+
+```bash [npm]
+npm install -D @unocss/extractor-mdc
+```
+
 :::
 
 ```ts [uno.config.ts]
@@ -26,9 +34,7 @@ import extractorMdc from '@unocss/extractor-mdc'
 import { defineConfig } from 'unocss'
 
 export default defineConfig({
-  extractors: [
-    extractorMdc(),
-  ],
+  extractors: [extractorMdc()]
 })
 ```
 

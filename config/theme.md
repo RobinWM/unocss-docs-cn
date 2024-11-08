@@ -1,6 +1,10 @@
 ---
-title: 主题
-description: UnoCSS 还支持设置您在 Tailwind Windi 中可能熟悉的主题系统。
+title: UnoCSS 主题系统指南 - 深度定制你的样式
+description: 了解 UnoCSS 主题系统的用法，如何在配置中设置主题属性，提升样式的灵活性与可维护性。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 主题, Tailwind, Windi, 样式定制
 ---
 
 # 主题

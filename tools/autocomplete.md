@@ -1,6 +1,10 @@
 ---
-title: 自动完成工具
-description: UnoCSS 的自动完成工具 (@unocss/autocomplete)。
+title: UnoCSS 自动完成工具使用指南
+description: 探索 UnoCSS 的自动完成工具 (@unocss/autocomplete) 的用法和示例。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 自动完成, VS Code, 规则, 示例
 ---
 
 # 自动完成

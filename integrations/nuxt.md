@@ -1,6 +1,10 @@
 ---
-title: UnoCSS Nuxt 模块
-description: Nuxt 模块用于 UnoCSS。
+title: UnoCSS Nuxt 模块 - 安装与配置指南
+description: 学习如何安装和配置 UnoCSS 的 Nuxt 模块，以便在 Nuxt 应用中使用。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, Nuxt, 模块, 安装, 配置
 ---
 
 # Nuxt 模块
@@ -10,24 +14,26 @@ description: Nuxt 模块用于 UnoCSS。
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D unocss @unocss/nuxt
-  ```
-  ```bash [yarn]
-  yarn add -D unocss @unocss/nuxt
-  ```
-  ```bash [npm]
-  npm install -D unocss @unocss/nuxt
-  ```
+
+```bash [pnpm]
+pnpm add -D unocss @unocss/nuxt
+```
+
+```bash [yarn]
+yarn add -D unocss @unocss/nuxt
+```
+
+```bash [npm]
+npm install -D unocss @unocss/nuxt
+```
+
 :::
 
 在你的 Nuxt 配置文件中添加 `@unocss/nuxt`：
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
-  modules: [
-    '@unocss/nuxt',
-  ],
+  modules: ['@unocss/nuxt']
 })
 ```
 
@@ -45,12 +51,12 @@ export default defineConfig({
 
 ## 支持状态
 
-| | Nuxt 2 | Nuxt Bridge | Nuxt 3 |
-| --- | :-- | :-- | :-- |
-| Webpack 开发 | ✅ | ✅ | 🚧 |
-| Webpack 构建 | ✅ | ✅ | ✅ |
-| Vite 开发 | - | ✅ | ✅ |
-| Vite 构建 | - | ✅ | ✅ |
+|              | Nuxt 2 | Nuxt Bridge | Nuxt 3 |
+| ------------ | :----- | :---------- | :----- |
+| Webpack 开发 | ✅     | ✅          | 🚧     |
+| Webpack 构建 | ✅     | ✅          | ✅     |
+| Vite 开发    | -      | ✅          | ✅     |
+| Vite 构建    | -      | ✅          | ✅     |
 
 ## 配置
 
@@ -62,8 +68,8 @@ export default defineConfig({
 export default defineNuxtConfig({
   // ...
   unocss: {
-    nuxtLayers: true,
-  },
+    nuxtLayers: true
+  }
 })
 ```
 
@@ -81,9 +87,12 @@ export default config
 import { mergeConfigs } from '@unocss/core'
 import config from './.nuxt/uno.config.mjs'
 
-export default mergeConfigs([config, {
-  // 你的覆盖配置
-}])
+export default mergeConfigs([
+  config,
+  {
+    // 你的覆盖配置
+  }
+])
 ```
 
 ## 许可证

@@ -1,6 +1,10 @@
 ---
-title: Presets
-description: Presets 是 UnoCSS 的核心。它们让你能在几分钟内创建自己的自定义框架。
+title: UnoCSS 预设 - 自定义框架的核心
+description: 了解如何使用和创建 UnoCSS 的预设，以快速构建自定义框架。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 预设, 自定义框架, 配置, 规则
 outline: deep
 ---
 
@@ -17,10 +21,12 @@ import { defineConfig, presetAttributify, presetUno } from 'unocss'
 
 export default defineConfig({
   presets: [
-    presetAttributify({ /* preset 选项 */}),
-    presetUno(),
+    presetAttributify({
+      /* preset 选项 */
+    }),
+    presetUno()
     // ...自定义 presets
-  ],
+  ]
 })
 ```
 
@@ -35,7 +41,7 @@ export default defineConfig({
   presets: [], // 禁用默认 preset
   rules: [
     // 你的自定义规则
-  ],
+  ]
 })
 ```
 

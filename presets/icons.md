@@ -1,6 +1,10 @@
 ---
-title: 图标预设
-description: 使用 UnoCSS（@unocss/preset-icons）为任何图标提供纯 CSS 解决方案。
+title: 图标预设 - UnoCSS 的纯 CSS 解决方案
+description: 使用 UnoCSS（@unocss/preset-icons）为任何图标提供纯 CSS 解决方案，支持多种图标库和自定义配置。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 图标预设, CSS, Iconify, 前端开发
 outline: deep
 ---
 
@@ -37,7 +41,9 @@ const toggleDark = () => {
 <!-- 亮色模式下的太阳，暗色模式下的月亮，来自 Carbon -->
 <button class="i-carbon-sun dark:i-carbon-moon" />
 <!-- Twemoji 的笑脸，悬停时变成泪水 -->
-<div class="i-twemoji-grinning-face-with-smiling-eyes hover:i-twemoji-face-with-tears-of-joy" />
+<div
+  class="i-twemoji-grinning-face-with-smiling-eyes hover:i-twemoji-face-with-tears-of-joy"
+/>
 ```
 
 <div class="w-full flex items-center justify-center gap-x-4 text-4xl p-2 mt-4">
@@ -54,15 +60,19 @@ const toggleDark = () => {
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/preset-icons @iconify-json/[你想要的集合]
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/preset-icons @iconify-json/[你想要的集合]
-  ```
-  ```bash [npm]
-  npm install -D @unocss/preset-icons @iconify-json/[你想要的集合]
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/preset-icons @iconify-json/[你想要的集合]
+```
+
+```bash [yarn]
+yarn add -D @unocss/preset-icons @iconify-json/[你想要的集合]
+```
+
+```bash [npm]
+npm install -D @unocss/preset-icons @iconify-json/[你想要的集合]
+```
+
 :::
 
 我们使用 [Iconify](https://iconify.design) 作为图标数据源。您需要按照 `@iconify-json/*` 模式在 `devDependencies` 中安装相应的图标集。例如，Material Design Icons 的图标集为 `@iconify-json/mdi`，Tabler 的图标集为 `@iconify-json/tabler`。您可以参考 [Icônes](https://icones.js.org/) 或 [Iconify](https://icon-sets.iconify.design/) 查看所有可用集合。
@@ -73,9 +83,11 @@ import { defineConfig } from 'unocss'
 
 export default defineConfig({
   presets: [
-    presetIcons({ /* 选项 */ }),
+    presetIcons({
+      /* 选项 */
+    })
     // ...其他预设
-  ],
+  ]
 })
 ```
 
@@ -85,6 +97,7 @@ export default defineConfig({
 ```ts
 import { presetIcons } from 'unocss'
 ```
+
 :::
 
 ::: info
@@ -94,15 +107,19 @@ import { presetIcons } from 'unocss'
 如果您希望一次性安装 Iconify 上所有可用的图标集（约 130MB）：
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @iconify/json
-  ```
-  ```bash [yarn]
-  yarn add -D @iconify/json
-  ```
-  ```bash [npm]
-  npm install -D @iconify/json
-  ```
+
+```bash [pnpm]
+pnpm add -D @iconify/json
+```
+
+```bash [yarn]
+yarn add -D @iconify/json
+```
+
+```bash [npm]
+npm install -D @iconify/json
+```
+
 :::
 
 ### 额外属性
@@ -112,10 +129,10 @@ import { presetIcons } from 'unocss'
 ```ts
 presetIcons({
   extraProperties: {
-    'display': 'inline-block',
-    'vertical-align': 'middle',
+    display: 'inline-block',
+    'vertical-align': 'middle'
     // ...
-  },
+  }
 })
 ```
 
@@ -159,9 +176,11 @@ export default defineConfig({
   presets: [
     presetIcons({
       collections: {
-        carbon: () => import('@iconify-json/carbon/icons.json').then(i => i.default),
+        carbon: () =>
+          import('@iconify-json/carbon/icons.json').then(i => i.default),
         mdi: () => import('@iconify-json/mdi/icons.json').then(i => i.default),
-        logos: () => import('@iconify-json/logos/icons.json').then(i => i.default),
+        logos: () =>
+          import('@iconify-json/logos/icons.json').then(i => i.default)
       }
     })
   ]
@@ -186,10 +205,12 @@ presetIcons({
 presetIcons({
   collections: {
     custom: {
-      circle: '<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"></circle></svg>',
+      circle:
+        '<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"></circle></svg>'
       /* ... */
     },
-    carbon: () => import('@iconify-json/carbon/icons.json').then(i => i.default as any),
+    carbon: () =>
+      import('@iconify-json/carbon/icons.json').then(i => i.default as any)
     /* ... */
   }
 })
@@ -222,20 +243,21 @@ export default defineConfig({
         'my-icons': {
           account: '<svg><!-- ... --></svg>',
           // load your custom icon lazily
-          settings: () => fs.readFile('./path/to/my-icon.svg', 'utf-8'),
+          settings: () => fs.readFile('./path/to/my-icon.svg', 'utf-8')
           /* ... */
         },
-        'my-other-icons': async (iconName) => {
+        'my-other-icons': async iconName => {
           // your custom loader here. Do whatever you want.
           // for example, fetch from a remote server:
-          return await fetch(`https://example.com/icons/${iconName}.svg`).then(res => res.text())
+          return await fetch(`https://example.com/icons/${iconName}.svg`).then(
+            res => res.text()
+          )
         },
         // a helper to load icons from the file system
         // files under `./assets/icons` with `.svg` extension will be loaded as it's file name
         // you can also provide a transform callback to change each icon (optional)
-        'my-yet-other-icons': FileSystemIconLoader(
-          './assets/icons',
-          svg => svg.replace(/#fff/, 'currentColor')
+        'my-yet-other-icons': FileSystemIconLoader('./assets/icons', svg =>
+          svg.replace(/#fff/, 'currentColor')
         )
       }
     })
@@ -252,6 +274,7 @@ export default defineConfig({
 :::
 
 例如，您可以使用 `an-awesome-collection` 或 `@my-awesome-collections/some-collection` 来加载您的自定义或第三方图标：
+
 ```ts [unocss.config.ts]
 import { createExternalPackageIconLoader } from '@iconify/utils/lib/loader/external-pkg'
 import { defineConfig, presetIcons } from 'unocss'
@@ -266,6 +289,7 @@ export default defineConfig({
 ```
 
 您还可以将其与其他自定义图标加载程序结合使用，例如：
+
 ```ts [unocss.config.ts]
 import { createExternalPackageIconLoader } from '@iconify/utils/lib/loader/external-pkg'
 import { defineConfig, presetIcons } from 'unocss'
@@ -276,11 +300,14 @@ export default defineConfig({
     presetIcons({
       collections: {
         ...createExternalPackageIconLoader('other-awesome-collection'),
-        ...createExternalPackageIconLoader('@my-awesome-collections/some-collection'),
-        ...createExternalPackageIconLoader('@my-awesome-collections/some-other-collection'),
-        'my-yet-other-icons': FileSystemIconLoader(
-          './assets/icons',
-          svg => svg.replace(/^<svg /, '<svg fill="currentColor" ')
+        ...createExternalPackageIconLoader(
+          '@my-awesome-collections/some-collection'
+        ),
+        ...createExternalPackageIconLoader(
+          '@my-awesome-collections/some-other-collection'
+        ),
+        'my-yet-other-icons': FileSystemIconLoader('./assets/icons', svg =>
+          svg.replace(/^<svg /, '<svg fill="currentColor" ')
         )
       }
     })
@@ -325,8 +352,7 @@ presetIcons({
   customizations: {
     transform(svg, collection, icon) {
       // 不对此集合上的此图标应用填充
-      if (collection === 'custom' && icon === 'my-icon')
-        return svg
+      if (collection === 'custom' && icon === 'my-icon') return svg
       return svg.replace(/#fff/, 'currentColor')
     }
   }
@@ -398,6 +424,7 @@ presetIcons({
 :::
 
 有关 `icon()` 指令的更多信息，请查看 [指令](/transformers/directives#icon)。
+
 ## 选项
 
 ### scale
@@ -416,6 +443,7 @@ presetIcons({
 生成的 CSS 图标的模式。
 
 :::tip
+
 - `mask` - 使用背景颜色和 `mask` 属性进行单色图标的渲染
 - `bg` - 使用背景图像渲染图标，颜色是静态的
 - `auto` - 根据图标的样式智能地在 `mask` 和 `bg` 之间决定模式

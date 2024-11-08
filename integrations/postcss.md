@@ -1,5 +1,10 @@
 ---
-title: UnoCSS PostCSS 插件
+title: UnoCSS PostCSS 插件 - 使用指南
+description: 了解 UnoCSS 的 PostCSS 插件，支持 @apply、@screen 和 theme() 指令的使用。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, PostCSS, 插件, @apply, @screen, theme()
 outline: deep
 ---
 
@@ -16,24 +21,26 @@ UnoCSS 的 PostCSS 插件。支持 `@apply`、`@screen` 和 `theme()` 指令。
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D unocss @unocss/postcss
-  ```
-  ```bash [yarn]
-  yarn add -D unocss @unocss/postcss
-  ```
-  ```bash [npm]
-  npm install -D unocss @unocss/postcss
-  ```
+
+```bash [pnpm]
+pnpm add -D unocss @unocss/postcss
+```
+
+```bash [yarn]
+yarn add -D unocss @unocss/postcss
+```
+
+```bash [npm]
+npm install -D unocss @unocss/postcss
+```
+
 :::
 
 ```ts [postcss.config.mjs]
 import UnoCSS from '@unocss/postcss'
 
 export default {
-  plugins: [
-    UnoCSS(),
-  ],
+  plugins: [UnoCSS()]
 }
 ```
 
@@ -42,13 +49,9 @@ import { defineConfig, presetUno } from 'unocss'
 
 export default defineConfig({
   content: {
-    filesystem: [
-      '**/*.{html,js,ts,jsx,tsx,vue,svelte,astro}',
-    ],
+    filesystem: ['**/*.{html,js,ts,jsx,tsx,vue,svelte,astro}']
   },
-  presets: [
-    presetUno(),
-  ],
+  presets: [presetUno()]
 })
 ```
 
@@ -143,6 +146,7 @@ export default defineConfig({
 ```
 
 #### 断点变体支持
+
 `@screen` 还支持 `lt`、`at` 变体
 
 ##### `@screen lt`

@@ -1,5 +1,10 @@
 ---
-title: 社区 JetBrains 插件为 UnoCSS
+title: 社区 JetBrains 插件为 UnoCSS - 安装与特性
+description: 了解社区维护的 JetBrains 插件，为 UnoCSS 提供支持，包括安装步骤和主要特性。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, JetBrains, 插件, 安装, 特性
 ---
 
 # JetBrains IDEs 插件

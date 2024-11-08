@@ -1,3 +1,12 @@
+---
+title: UnoCSS 配置指南 - 完全掌握强大功能
+description: 探索 UnoCSS 的配置选项，包括规则、快捷方式、主题和更多，提升你的开发效率。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 配置, 原子 CSS, 开发
+---
+
 # 配置
 
 配置是 UnoCSS 强大的来源。

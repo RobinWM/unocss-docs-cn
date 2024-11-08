@@ -1,6 +1,10 @@
 ---
-title: Attributify 预设
-description: 为其他预设启用 Attributify 模式的 UnoCSS 预设。
+title: Attributify 预设 - UnoCSS 的使用指南
+description: 了解 UnoCSS 的 Attributify 预设，如何启用 Attributify 模式及其安装与使用方法。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, Attributify, 预设, CSS, 前端开发
 outline: deep
 ---
 
@@ -13,15 +17,19 @@ outline: deep
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/preset-attributify
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/preset-attributify
-  ```
-  ```bash [npm]
-  npm install -D @unocss/preset-attributify
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/preset-attributify
+```
+
+```bash [yarn]
+yarn add -D @unocss/preset-attributify
+```
+
+```bash [npm]
+npm install -D @unocss/preset-attributify
+```
+
 :::
 
 ```ts [uno.config.ts]
@@ -29,9 +37,11 @@ import presetAttributify from '@unocss/preset-attributify'
 
 export default defineConfig({
   presets: [
-    presetAttributify({ /* preset options */ }),
+    presetAttributify({
+      /* preset options */
+    })
     // ...
-  ],
+  ]
 })
 ```
 
@@ -41,6 +51,7 @@ export default defineConfig({
 ```ts
 import { presetAttributify } from 'unocss'
 ```
+
 :::
 
 ## Attributify 模式
@@ -48,7 +59,9 @@ import { presetAttributify } from 'unocss'
 假设您有这样一个使用 Tailwind CSS 实用程序的按钮。当列表变得更长时，阅读和维护变得非常困难。
 
 ```html
-<button class="bg-blue-400 hover:bg-blue-500 text-sm text-white font-mono font-light py-2 px-4 rounded border-2 border-blue-200 dark:bg-blue-500 dark:hover:bg-blue-600">
+<button
+  class="bg-blue-400 hover:bg-blue-500 text-sm text-white font-mono font-light py-2 px-4 rounded border-2 border-blue-200 dark:bg-blue-500 dark:hover:bg-blue-600"
+>
   Button
 </button>
 ```
@@ -76,17 +89,13 @@ import { presetAttributify } from 'unocss'
 例如：
 
 ```html
-<button class="border border-red">
-  Button
-</button>
+<button class="border border-red">Button</button>
 ```
 
 可以写成：
 
 ```html
-<button border="~ red">
-  Button
-</button>
+<button border="~ red">Button</button>
 ```
 
 ## Valueless attributify
@@ -126,7 +135,7 @@ import { presetAttributify } from 'unocss'
 ```ts
 presetAttributify({
   prefix: 'un-',
-  prefixedOnly: true, // <--
+  prefixedOnly: true // <--
 })
 ```
 
@@ -214,7 +223,7 @@ import type { AttributifyAttributes } from '@unocss/preset-attributify'
 
 declare global {
   namespace astroHTML.JSX {
-    interface HTMLAttributes extends AttributifyAttributes { }
+    interface HTMLAttributes extends AttributifyAttributes {}
   }
 }
 ```
@@ -240,7 +249,8 @@ import type { AttributifyNames } from '@unocss/preset-attributify'
 
 type Prefix = 'uno:' // change it to your prefix
 
-interface HTMLAttributes extends Partial<Record<AttributifyNames<Prefix>, string>> {}
+interface HTMLAttributes
+  extends Partial<Record<AttributifyNames<Prefix>, string>> {}
 ```
 
 ## 选项

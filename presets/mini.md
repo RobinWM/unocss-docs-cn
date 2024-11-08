@@ -1,6 +1,10 @@
 ---
-title: Mini 预设
-description: UnoCSS 的基本预设 (@unocss/preset-mini)。
+title: Mini 预设 - UnoCSS 的基础工具类
+description: UnoCSS 的基本预设 (@unocss/preset-mini)，仅包含最基本的工具类，适合定制化开发。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, Mini 预设, 工具类, CSS, 前端开发
 outline: deep
 ---
 
@@ -13,15 +17,19 @@ UnoCSS 的基本预设，仅包含最基本的工具类。
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/preset-mini
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/preset-mini
-  ```
-  ```bash [npm]
-  npm install -D @unocss/preset-mini
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/preset-mini
+```
+
+```bash [yarn]
+yarn add -D @unocss/preset-mini
+```
+
+```bash [npm]
+npm install -D @unocss/preset-mini
+```
+
 :::
 
 ```ts [uno.config.ts]
@@ -30,9 +38,9 @@ import { defineConfig } from 'unocss'
 
 export default defineConfig({
   presets: [
-    presetMini(),
+    presetMini()
     // ...other presets
-  ],
+  ]
 })
 ```
 
@@ -42,6 +50,7 @@ export default defineConfig({
 ```ts
 import { presetMini } from 'unocss'
 ```
+
 :::
 
 ## 规则
@@ -127,9 +136,9 @@ presetMini({
     colors: {
       veryCool: '#0000ff', // class="text-very-cool"
       brand: {
-        primary: 'hsl(var(--hue, 217) 78% 51%)', // class="bg-brand-primary"
+        primary: 'hsl(var(--hue, 217) 78% 51%)' // class="bg-brand-primary"
       }
-    },
+    }
   }
 })
 ```
@@ -137,6 +146,7 @@ presetMini({
 ## 选项
 
 ### dark
+
 - **类型：** `class | media | DarkModeSelectors`
 - **默认值：** `class`
 
@@ -161,12 +171,14 @@ interface DarkModeSelectors {
 ```
 
 ### attributifyPseudo
+
 - **类型：** `Boolean`
 - **默认值：** `false`
 
 将伪类选择器生成为 `[group=""]`，而不是 `.group`。
 
 ### variablePrefix
+
 - **类型：** `string`
 - **默认值：**
 
@@ -175,12 +187,14 @@ interface DarkModeSelectors {
 CSS 自定义属性的前缀。
 
 ### prefix
+
 - **类型：** `string | string[]`
 - **默认值：** `undefined`
 
 工具类前缀。
 
 ### preflight
+
 - **类型：** `boolean`
 - **默认值：** `true`
 

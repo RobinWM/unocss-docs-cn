@@ -1,3 +1,12 @@
+---
+title: UnoCSS 配置文件指南 - 最佳实践与示例
+description: 学习如何使用专门的 `uno.config.ts` 文件配置 UnoCSS，以获得最佳的 IDE 体验和集成支持。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 配置文件, uno.config.ts, 最佳实践, IDE 集成
+---
+
 # 配置文件
 
 我们**强烈建议使用一个专门的 `uno.config.ts` 文件**来配置您的 UnoCSS，以便在 IDE 和其他集成中获得最佳体验。
@@ -33,13 +42,10 @@ export default defineConfig({
     presetWebFonts({
       fonts: {
         // ...
-      },
-    }),
+      }
+    })
   ],
-  transformers: [
-    transformerDirectives(),
-    transformerVariantGroup(),
-  ],
+  transformers: [transformerDirectives(), transformerVariantGroup()]
 })
 ```
 
@@ -54,9 +60,9 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [
     UnoCSS({
-      configFile: '../my-uno.config.ts',
-    }),
-  ],
+      configFile: '../my-uno.config.ts'
+    })
+  ]
 })
 ```
 

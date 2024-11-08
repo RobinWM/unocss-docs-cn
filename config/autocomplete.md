@@ -1,3 +1,12 @@
+---
+title: UnoCSS 自动完成功能指南 - 自定义智能建议
+description: 探索 UnoCSS 的自动完成功能，学习如何定制智能建议以提升开发体验和效率。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 自动完成, 智能建议, 开发效率, VS Code 扩展
+---
+
 # 自动完成
 
 UnoCSS 的智能建议在<a href="https://unocss.dev/play/" target="_blank" rel="noreferrer">演示平台</a>和[VS Code 扩展](/integrations/vscode)中可以进行定制。

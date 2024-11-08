@@ -1,6 +1,10 @@
 ---
-title: 快捷方式
-description: UnoCSS 提供的快捷方式功能类似于 Windi CSS 的功能。
+title: UnoCSS 快捷方式功能指南 - 高效组合规则
+description: 探索 UnoCSS 的快捷方式功能，了解如何将多个规则组合成简写，提升开发效率。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 快捷方式, Windi CSS, 规则组合, 开发效率
 ---
 
 # 快捷方式

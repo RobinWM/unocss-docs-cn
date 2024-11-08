@@ -1,3 +1,12 @@
+---
+title: 社区预设与工具 - UnoCSS 资源大全
+description: 探索 UnoCSS 社区提供的各种预设、框架、转换器和工具，提升您的开发体验。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 社区预设, 工具, 转换器, 前端开发
+---
+
 # 社区预设
 
 - [unocss-preset-scalpel](https://github.com/macheteHot/unocss-preset-scalpel) - 由[@macheteHot](https://github.com/macheteHot/)制作的 Scalpel 预设。
@@ -10,7 +19,7 @@
 - [unocss-preset-forms](https://github.com/Julien-R44/unocss-preset-forms) - 由[@Julien-R44](https://github.com/Julien-R44)制作的将[@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms)移植至 UnoCSS 的预设。
 - [unocss-preset-extra](https://github.com/MoomFE/unocss-preset-extra) - 由[@Zhang-Wei-666](https://github.com/Zhang-Wei-666)制作的[Animate.css](https://animate.style)预设以及其他一些规则。
 - [unocss-preset-daisy](https://github.com/kidonng/unocss-preset-daisy) - 由[@kidonng](https://github.com/kidonng)制作的 daisyUI 预设。
-- [unocss-preset-primitives](https://github.com/zirbest/unocss-preset-primitives) - 由[@zirbest](https://github.com/zirbest)制作的类似于[headlessui-tailwindcss](https://github.com/tailwindlabs/headlessui/tree/main/packages/%40headlessui-tailwindcss)、radix-ui的 UnoCSS 定制预设。
+- [unocss-preset-primitives](https://github.com/zirbest/unocss-preset-primitives) - 由[@zirbest](https://github.com/zirbest)制作的类似于[headlessui-tailwindcss](https://github.com/tailwindlabs/headlessui/tree/main/packages/%40headlessui-tailwindcss)、radix-ui 的 UnoCSS 定制预设。
 - [unocss-preset-theme](https://github.com/Dunqing/unocss-preset-theme) - 由[@Dunqing](https://github.com/Dunqing)制作的自动主题切换预设。
 - [unocss-preset-chinese](https://github.com/kirklin/unocss-preset-chinese) - 由[@kirklin](https://github.com/kirklin)制作的中文字体预设。
 - [unocss-preset-autoprefixer](https://github.com/zouhangwithsweet/unocss-preset-autoprefixer) - 由[@zouhang](https://github.com/zouhangwithsweet)制作的 Autoprefixer 预设。

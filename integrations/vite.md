@@ -1,6 +1,10 @@
 ---
-title: UnoCSS Vite 插件
-description: UnoCSS 的 Vite 插件 (@unocss/vite)
+title: UnoCSS Vite 插件 - 安装与配置指南
+description: 学习如何安装和配置 UnoCSS 的 Vite 插件，以实现高效的原子 CSS 开发体验。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, Vite, 插件, 安装, 配置
 outline: deep
 ---
 

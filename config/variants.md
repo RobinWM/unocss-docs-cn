@@ -1,6 +1,10 @@
 ---
-title: 变体
-description: 变体允许您对现有规则应用一些变体
+title: UnoCSS 变体应用指南 - 掌握自定义规则
+description: 了解 UnoCSS 变体的使用，如何对现有规则应用变化，提升你的 CSS 开发技能。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 变体, CSS, 自定义规则, 开发
 ---
 
 # 变体

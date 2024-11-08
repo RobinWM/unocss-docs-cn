@@ -1,6 +1,10 @@
 ---
-title: Wind 预设
-description: UnoCSS 的 Tailwind CSS / Windi CSS 紧凑预设 (@unocss/preset-wind)。
+title: Wind 预设 - UnoCSS 的紧凑工具类
+description: UnoCSS 的 Tailwind CSS / Windi CSS 紧凑预设 (@unocss/preset-wind)，兼容多种 CSS 框架。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, Wind 预设, CSS, Tailwind CSS, Windi CSS
 outline: deep
 ---
 
@@ -17,15 +21,19 @@ UnoCSS 的 Tailwind CSS / Windi CSS 紧凑预设。
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/preset-wind
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/preset-wind
-  ```
-  ```bash [npm]
-  npm install -D @unocss/preset-wind
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/preset-wind
+```
+
+```bash [yarn]
+yarn add -D @unocss/preset-wind
+```
+
+```bash [npm]
+npm install -D @unocss/preset-wind
+```
+
 :::
 
 ```ts [uno.config.ts]
@@ -33,9 +41,7 @@ import presetWind from '@unocss/preset-wind'
 import { defineConfig } from 'unocss'
 
 export default defineConfig({
-  presets: [
-    presetWind(),
-  ],
+  presets: [presetWind()]
 })
 ```
 
@@ -45,9 +51,11 @@ export default defineConfig({
 ```ts
 import { presetWind } from 'unocss'
 ```
+
 :::
 
 ## 规则
+
 该预设的主要目标是与 [Tailwind CSS](https://tailwindcss.com/) 和 [Windi CSS](https://windicss.org/) 兼容。请注意，无法保证完全兼容性。有关详细用法，请参阅它们的 [文档](https://tailwindcss.com/docs)。
 
 有关此预设中包含的所有规则和预设，请参阅我们的 <a href="/interactive/" target="_blank">交互式文档</a> 或直接转到 [源代码](https://github.com/unocss/unocss/tree/main/packages/preset-wind)。
@@ -63,21 +71,21 @@ import { presetWind } from 'unocss'
 Tailwind [允许](https://tailwindcss.com/docs/background-position#using-custom-values)使用自定义值来设置 `background-position`，使用裸语法：
 
 ```html
-<div class="bg-[center_top_1rem]">
+<div class="bg-[center_top_1rem]"></div>
 ```
 
 但是，Wind 预设会将 `center_top_1rem` 解释为一种颜色。要实现相同的效果，请使用 `position:` 前缀：
 
 ```html
-<div class="bg-[position:center_top_1rem]">
+<div class="bg-[position:center_top_1rem]"></div>
 ```
 
 ## 与 Windi CSS 的差异
 
 ### 断点
 
-| Windi CSS | UnoCSS |
-|:--|:--|
+| Windi CSS | UnoCSS      |
+| :-------- | :---------- |
 | `<sm:p-1` | `lt-sm:p-1` |
 | `@lg:p-1` | `at-lg:p-1` |
 | `>xl:p-1` | `xl:p-1`    |
@@ -86,8 +94,8 @@ Tailwind [允许](https://tailwindcss.com/docs/background-position#using-custom-
 
 该预设使用 `_` 替换 `,` 以保留方括号语法中的空格。
 
-| Windi CSS | UnoCSS |
-|:--|:--|
+| Windi CSS                          | UnoCSS                             |
+| :--------------------------------- | :--------------------------------- |
 | `grid-cols-[1fr,10px,max-content]` | `grid-cols-[1fr_10px_max-content]` |
 
 由于某些 CSS 规则需要 `,` 作为值的一部分，例如 `grid-cols-[repeat(3,auto)]`
@@ -122,6 +130,7 @@ Tailwind [允许](https://tailwindcss.com/docs/background-position#using-custom-
 :::
 
 ### important
+
 - **类型：** `boolean | string`
 - **默认值：** `false`
 
@@ -142,9 +151,9 @@ import { defineConfig } from 'unocss'
 export default defineConfig({
   presets: [
     presetWind({
-      important: '#app',
-    }),
-  ],
+      important: '#app'
+    })
+  ]
 })
 ```
 
@@ -154,7 +163,7 @@ export default defineConfig({
 
 ```css
 #app :is(.dark .dark\:bg-blue) {
-    --un-bg-opacity: 1;
-    background-color: rgb(96 165 250 / var(--un-bg-opacity));
+  --un-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--un-bg-opacity));
 }
 ```

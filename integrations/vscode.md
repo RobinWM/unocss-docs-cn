@@ -1,6 +1,10 @@
 ---
-title: UnoCSS VS Code 扩展
-description: UnoCSS 适用于 VS Code。
+title: UnoCSS VS Code 扩展 - 提升开发体验
+description: 了解 UnoCSS 的 VS Code 扩展，提供自动加载配置和工具提示等功能。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, VS Code, 扩展, 配置, 图标预设
 ---
 
 # VS Code 扩展

@@ -1,6 +1,10 @@
 ---
-title: UnoCSS Svelte 作用域
-description: Svelte 作用域的 Vite 插件和 Svelte 预处理器为 UnoCSS。
+title: UnoCSS Svelte 作用域 - Vite 插件与预处理器
+description: 了解 UnoCSS 的 Svelte 作用域插件，如何在 Svelte 组件中使用实用样式，以及配置与预设支持。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, Svelte, 作用域, Vite 插件, 预处理器
 outline: deep
 ---
 
@@ -28,11 +32,11 @@ outline: deep
 
 ## 何时使用
 
-| 使用场景 | | 描述 | 使用的包 |
-| --- | --- | --- | --- |
-| 小型应用 | :x: | 使用一个全局 CSS 文件更方便。使用常规 Vite 插件 [Svelte](/integrations/vite#svelte)/[SvelteKit](/integrations/vite#sveltekit)。 | [unocss/vite](/integrations/vite#svelte) |
-| 大型应用 | ✅ | Svelte 作用域可以帮助你避免全局 CSS 文件的不断增长。 | [@unocss/svelte-scoped/vite](#vite-plugin) |
-| 组件库 | ✅ | 生成的样式直接放在构建的组件中，无需在使用应用的构建管道中使用 UnoCSS。 | [@unocss/svelte-scoped/preprocess](#svelte-preprocessor) |
+| 使用场景 |     | 描述                                                                                                                            | 使用的包                                                 |
+| -------- | --- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| 小型应用 | :x: | 使用一个全局 CSS 文件更方便。使用常规 Vite 插件 [Svelte](/integrations/vite#svelte)/[SvelteKit](/integrations/vite#sveltekit)。 | [unocss/vite](/integrations/vite#svelte)                 |
+| 大型应用 | ✅  | Svelte 作用域可以帮助你避免全局 CSS 文件的不断增长。                                                                            | [@unocss/svelte-scoped/vite](#vite-plugin)               |
+| 组件库   | ✅  | 生成的样式直接放在构建的组件中，无需在使用应用的构建管道中使用 UnoCSS。                                                         | [@unocss/svelte-scoped/preprocess](#svelte-preprocessor) |
 
 ## 工作原理
 
@@ -42,12 +46,12 @@ outline: deep
 
 因为 Svelte 作用域重写了你的实用类名，你在哪里可以写它们是有限制的：
 
-| 支持的语法 | 示例 |
-| --- | --- |
-| 类属性 | `<div class="mb-1" />` |
-| 类指令 | `<div class:mb-1={condition} />` |
-| 类指令简写 | `<div class:logo />` |
-| 类属性 | `<Button class="mb-1" />` |
+| 支持的语法 | 示例                             |
+| ---------- | -------------------------------- |
+| 类属性     | `<div class="mb-1" />`           |
+| 类指令     | `<div class:mb-1={condition} />` |
+| 类指令简写 | `<div class:logo />`             |
+| 类属性     | `<Button class="mb-1" />`        |
 
 Svelte 作用域设计为使用实用样式的项目的替代品。因此，也支持在类属性中找到的表达式（例如 `<div class="mb-1 {foo ? 'mr-1' : 'mr-2'}" />`），但我们建议你继续使用类指令语法。同时注意，如果你以其他方式使用了类名，如将它们放在 `<script>` 块中或使用属性化模式，则你需要在使用 Svelte 作用域之前采取额外的步骤。你可以使用 `safelist` 选项，并查看下面的[预设支持](#预设支持)部分以获取更多提示。
 
@@ -178,16 +182,19 @@ Svelte 作用域甚至能够正确处理如 `dark:text-white` 这样的上下文
 ### 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D unocss @unocss/svelte-scoped
-  ```
-  ```bash [yarn]
-  yarn add -D unocss @unocss/svelte-scoped
-  ```
 
- ```bash [npm]
-  npm install -D unocss @unocss/svelte-scoped
-  ```
+```bash [pnpm]
+pnpm add -D unocss @unocss/svelte-scoped
+```
+
+```bash [yarn]
+yarn add -D unocss @unocss/svelte-scoped
+```
+
+```bash [npm]
+ npm install -D unocss @unocss/svelte-scoped
+```
+
 :::
 
 #### 添加插件
@@ -205,8 +212,8 @@ export default defineConfig({
       // injectReset: '@unocss/reset/normalize.css', // 见类型定义了解所有包含的重置选项或如何传入你自己的
       // ...其他 Svelte 作用域选项
     }),
-    sveltekit(),
-  ],
+    sveltekit()
+  ]
 })
 ```
 
@@ -224,8 +231,7 @@ export default defineConfig({
 <head>
   <!-- ... -->
   <title>SvelteKit using UnoCSS Svelte Scoped</title>
-  %unocss-svelte-scoped.global%
-  %sveltekit.head%
+  %unocss-svelte-scoped.global% %sveltekit.head%
 </head>
 ```
 
@@ -239,7 +245,7 @@ export async function handle({ event, resolve }) {
       html.replace(
         '%unocss-svelte-scoped.global%',
         'unocss_svelte_scoped_global_styles'
-      ),
+      )
   })
   return response
 }
@@ -247,7 +253,7 @@ export async function handle({ event, resolve }) {
 
 这种转换必须在一个文件中，其[路径包括 `hooks` 和 `server`](https://github.com/unocss/unocss/blob/main/packages/svelte-scoped/src/_vite/global.ts#L12)（例如 `src/hooks.server.js`, `src/hooks.server.ts`），因为 `svelte-scoped` 将在你的服务器钩子文件中查找以替换 `unocss_svelte_scoped_global_styles` 为你的全球样式。确保不要从另一个文件导入这种转换，如当使用 [`@sveltejs/kit/hooks`](https://kit.svelte.dev/docs/modules#sveltejs-kit-hooks-sequence) 中的 `sequence`。
 
-*在常规的 Svelte 项目中，Vite 的 `transformIndexHtml` 钩子将自动执行此操作。*
+_在常规的 Svelte 项目中，Vite 的 `transformIndexHtml` 钩子将自动执行此操作。_
 
 ## Svelte 预处理器
 
@@ -258,15 +264,19 @@ export async function handle({ event, resolve }) {
 ### 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D unocss @unocss/svelte-scoped
-  ```
-  ```bash [yarn]
-  yarn add -D unocss @unocss/svelte-scoped
-  ```
-  ```bash [npm]
-  npm install -D unocss @unocss/svelte-scoped
-  ```
+
+```bash [pnpm]
+pnpm add -D unocss @unocss/svelte-scoped
+```
+
+```bash [yarn]
+yarn add -D unocss @unocss/svelte-scoped
+```
+
+```bash [npm]
+npm install -D unocss @unocss/svelte-scoped
+```
+
 :::
 
 #### 添加预处理器
@@ -279,13 +289,12 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 import UnoCSS from '@unocss/svelte-scoped/preprocess'
 
 const config = {
-
   preprocess: [
     vitePreprocess(),
     UnoCSS({
       // ...预处理器选项
-    }),
-  ],
+    })
+  ]
   // 其他 Svelte 配置
 }
 ```
@@ -328,7 +337,7 @@ const config = {
 
 任何以句点开始的特殊预设样式，例如 `.prose :where(a):not(:where(.not-prose, .not-prose *))`，将被包裹在 `:global()` 中以避免被 Svelte 编译器自动剥离。
 
-*如果你的类不依赖于预设样式或你的构建组件仅在已包含预设样式的应用中使用，则在单个组件中添加预设样式是不必要的。*
+_如果你的类不依赖于预设样式或你的构建组件仅在已包含预设样式的应用中使用，则在单个组件中添加预设样式是不必要的。_
 
 ### 安全列表
 
@@ -358,9 +367,9 @@ export default defineConfig({
 
 由于需要在全局样式表中有少量必要样式，并且其他样式包含在需要的每个组件中，预设需要根据情况进行处理：
 
-| 预设 | 支持 | 注释 |
-| --- | :-- | :-- |
-| [@unocss/preset-uno](https://unocss.dev/presets/uno), [@unocss/preset-mini](https://unocss.dev/presets/mini), [@unocss/preset-wind](https://unocss.dev/presets/wind), [@unocss/preset-icons](https://github.com/unocss/unocss/tree/main/packages/preset-icons), [@unocss/web-fonts](https://github.com/unocss/unocss/tree/main/packages/preset-icons) | ✅ |
+| 预设                                                                                                                                                                                                                                                                                                                                                  | 支持 | 注释 |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--- | :--- |
+| [@unocss/preset-uno](https://unocss.dev/presets/uno), [@unocss/preset-mini](https://unocss.dev/presets/mini), [@unocss/preset-wind](https://unocss.dev/presets/wind), [@unocss/preset-icons](https://github.com/unocss/unocss/tree/main/packages/preset-icons), [@unocss/web-fonts](https://github.com/unocss/unocss/tree/main/packages/preset-icons) | ✅   |
 
 这些和所有社区插件，例如 [unocss-preset-forms](https://github.com/Julien-R44/unocss-preset-forms)，只依赖于规则/变体/预设样式将工作。 |
 | [@unocss/preset-typography](https://github.com/unocss/unocss/tree/main/packages/preset-typography) | ✅ | 由于这个预设如何向你的预设样式中添加规则集，你必须在使用这个预设时将 `prose` 类添加到你的安全列表中，否则预设样式将永远不会被触发。这个预设的其他所有类，例如 `prose-pink`，可以在组件作用域中使用。 |
@@ -380,10 +389,10 @@ import transformerDirectives from '@unocss/transformer-directives'
 export default defineConfig({
   plugins: [
     UnoCSS({
-      cssFileTransformers: [transformerDirectives()],
+      cssFileTransformers: [transformerDirectives()]
     }),
-    sveltekit(),
-  ],
+    sveltekit()
+  ]
 })
 ```
 

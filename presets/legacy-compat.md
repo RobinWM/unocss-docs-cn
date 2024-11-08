@@ -1,6 +1,10 @@
 ---
-title: Legacy Compat 预设
-description: 旧版兼容工具类的集合。
+title: Legacy Compat 预设 - 旧版兼容工具集
+description: 旧版兼容工具类的集合，为其他预设生成 CSS 进行后处理，支持多种选项配置。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, Legacy Compat, 旧版兼容, CSS, 前端开发
 outline: deep
 ---
 
@@ -17,15 +21,19 @@ outline: deep
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/preset-legacy-compat
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/preset-legacy-compat
-  ```
-  ```bash [npm]
-  npm install -D @unocss/preset-legacy-compat
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/preset-legacy-compat
+```
+
+```bash [yarn]
+yarn add -D @unocss/preset-legacy-compat
+```
+
+```bash [npm]
+npm install -D @unocss/preset-legacy-compat
+```
+
 :::
 
 ```ts [uno.config.ts]
@@ -37,9 +45,9 @@ export default defineConfig({
     // ...other presets
     presetLegacyCompat({
       // options
-      commaStyleColorFunction: true,
-    }),
-  ],
+      commaStyleColorFunction: true
+    })
+  ]
 })
 ```
 

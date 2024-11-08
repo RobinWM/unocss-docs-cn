@@ -1,6 +1,10 @@
 ---
-title: 指南
-description: UnoCSS 入门
+title: UnoCSS 入门指南 - 灵活的原子 CSS 引擎
+description: 探索 UnoCSS 的核心功能和灵活性，学习如何自定义 CSS 工具类和预设。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 原子 CSS, 自定义工具类, CSS 预设
 ---
 
 ## 什么是 UnoCSS？
@@ -13,9 +17,7 @@ UnoCSS 是即时原子 CSS 引擎，旨在灵活和可扩展。核心是不带�
 import { defineConfig } from 'unocss'
 
 export default defineConfig({
-  rules: [
-    ['m-1', { margin: '1px' }],
-  ],
+  rules: [['m-1', { margin: '1px' }]]
 })
 ```
 
@@ -28,7 +30,9 @@ export default defineConfig({
 `m-1` 将被检测到，并生成以下 CSS：
 
 ```css
-.m-1 { margin: 1px; }
+.m-1 {
+  margin: 1px;
+}
 ```
 
 为了使它更灵活，您可以通过将规则的第一个参数（我们称之为匹配器）更改为 `RegExp`，并将主体更改为函数来使您的规则动态化，例如：
@@ -50,8 +54,12 @@ export default defineConfig({
 ```
 
 ```css
-.m-1 { margin: 1px; }
-.m-7.5 { margin: 7.5px; }
+.m-1 {
+  margin: 1px;
+}
+.m-7.5 {
+  margin: 7.5px;
+}
 ```
 
 ## 预设
@@ -65,10 +73,14 @@ export const myPreset: Preset = {
   name: 'my-preset',
   rules: [
     [/^m-([.\d]+)$/, ([_, num]) => ({ margin: `${num}px` })],
-    [/^p-([.\d]+)$/, ([_, num]) => ({ padding: `${num}px` })],
+    [/^p-([.\d]+)$/, ([_, num]) => ({ padding: `${num}px` })]
   ],
-  variants: [/* ... */],
-  shortcuts: [/* ... */],
+  variants: [
+    /* ... */
+  ],
+  shortcuts: [
+    /* ... */
+  ]
   // ...
 }
 ```
@@ -79,8 +91,8 @@ import { myPreset } from './my-preset'
 
 export default defineConfig({
   presets: [
-    myPreset, // 您自己的预设
-  ],
+    myPreset // 您自己的预设
+  ]
 })
 ```
 

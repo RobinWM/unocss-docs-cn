@@ -1,10 +1,14 @@
 ---
-title: Web字体预设
-description: UnoCSS 的 Web 字体支持 (@unocss/preset-web-fonts)。
+title: Web字体预设 - UnoCSS 的字体支持
+description: UnoCSS 的 Web 字体支持 (@unocss/preset-web-fonts)，通过多种提供商使用 Web 字体。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, Web字体, 字体支持, Google Fonts, CSS
 outline: deep
 ---
 
-# Web字体预设
+# Web 字体预设
 
 通过提供字体名称，从 [Google Fonts](https://fonts.google.com/)、[FontShare](https://www.fontshare.com/) 等提供商使用 Web 字体。
 
@@ -15,15 +19,19 @@ outline: deep
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/preset-web-fonts
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/preset-web-fonts
-  ```
-  ```bash [npm]
-  npm install -D @unocss/preset-web-fonts
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/preset-web-fonts
+```
+
+```bash [yarn]
+yarn add -D @unocss/preset-web-fonts
+```
+
+```bash [npm]
+npm install -D @unocss/preset-web-fonts
+```
+
 :::
 
 ```ts [uno.config.ts]
@@ -34,8 +42,10 @@ import { defineConfig } from 'unocss'
 export default defineConfig({
   presets: [
     presetUno(),
-    presetWebFonts({ /* options */ }),
-  ],
+    presetWebFonts({
+      /* options */
+    })
+  ]
 })
 ```
 
@@ -45,6 +55,7 @@ export default defineConfig({
 ```ts
 import { presetWebFonts } from 'unocss'
 ```
+
 :::
 
 ## 提供商
@@ -76,20 +87,24 @@ export default defineConfig({
     presetUno(),
     presetWebFonts({
       // 使用 axios 并设置 https 代理
-      customFetch: (url: string) => axios.get(url, { httpsAgent: new ProxyAgent('https://localhost:7890') }).then(it => it.data),
+      customFetch: (url: string) =>
+        axios
+          .get(url, { httpsAgent: new ProxyAgent('https://localhost:7890') })
+          .then(it => it.data),
       provider: 'google',
       fonts: {
         sans: 'Roboto',
-        mono: ['Fira Code', 'Fira Mono:400,700'],
-      },
-    }),
-  ],
+        mono: ['Fira Code', 'Fira Mono:400,700']
+      }
+    })
+  ]
 })
 ```
 
 ## 选项
 
 ### provider
+
 - **类型：** `WebFontsProviders`
 - **默认值：** `google`
 
@@ -100,6 +115,7 @@ type WebFontsProviders = 'google' | 'bunny' | 'fontshare' | 'none'
 ```
 
 ### fonts
+
 - **类型：** `Record<string, WebFontMeta | string | (WebFontMeta | string)[]>`
 
 字体。更多详情请参见[示例](#example)。
@@ -118,24 +134,28 @@ interface WebFontMeta {
 ```
 
 ### extendTheme
+
 - **类型：** `boolean`
 - **默认值：** `true`
 
 扩展主题对象。
 
 ### themeKey
+
 - **类型：** `string`
 - **默认值：** `fontFamily`
 
 主题对象的键。
 
 ### inlineImports
+
 - **类型：** `boolean`
 - **默认值：** `true`
 
 内联 CSS `@import()`。
 
 ### customFetch
+
 - **类型：** `(url: string) => Promise<string>`
 - **默认值：** `undefined`
 
@@ -156,15 +176,15 @@ presetWebFonts({
       {
         name: 'Lato',
         weights: ['400', '700'],
-        italic: true,
+        italic: true
       },
       {
         name: 'sans-serif',
 
-        provider: 'none',
-      },
-    ],
-  },
+        provider: 'none'
+      }
+    ]
+  }
 })
 ```
 
@@ -175,20 +195,19 @@ presetWebFonts({
 
 /* 层级: 默认 */
 .font-lato {
-    font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 .font-lobster {
-    font-family: "Lobster";
+  font-family: 'Lobster';
 }
 .font-mono {
-    font-family: "Fira Code", "Fira Mono", ui-monospace, SFMono-Regular, Menlo,
-    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: 'Fira Code', 'Fira Mono', ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 .font-sans {
-    font-family: "Roboto", ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
+  font-family: 'Roboto', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 ```
 
@@ -207,7 +226,7 @@ export default defineConfig({
       provider: 'none',
       fonts: {
         sans: 'Roboto',
-        mono: 'Fira Code',
+        mono: 'Fira Code'
       },
       // This will download the fonts and serve them locally
       processors: createLocalFontProcessor({
@@ -220,8 +239,8 @@ export default defineConfig({
         // Base URL to serve the fonts from the client
         fontServeBaseUrl: '/assets/fonts'
       })
-    }),
-  ],
+    })
+  ]
 })
 ```
 

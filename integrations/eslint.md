@@ -1,6 +1,10 @@
 ---
-title: UnoCSS ESLint 配置
-description: UnoCSS 的 ESLint 配置 (@unocss/eslint-config)。
+title: UnoCSS ESLint 配置 - 安装与规则
+description: 学习如何安装 UnoCSS 的 ESLint 配置，并了解可用的规则与选项。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, ESLint, 配置, 规则, 安装
 ---
 
 # ESLint 配置
@@ -10,15 +14,19 @@ UnoCSS 的 ESLint 配置：`@unocss/eslint-config`。
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/eslint-config
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/eslint-config
-  ```
-  ```bash [npm]
-  npm install -D @unocss/eslint-config
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/eslint-config
+```
+
+```bash [yarn]
+yarn add -D @unocss/eslint-config
+```
+
+```bash [npm]
+npm install -D @unocss/eslint-config
+```
+
 :::
 
 使用 [扁平配置样式](https://eslint.org/docs/latest/use/configure/configuration-files-new)：
@@ -27,7 +35,7 @@ UnoCSS 的 ESLint 配置：`@unocss/eslint-config`。
 import unocss from '@unocss/eslint-config/flat'
 
 export default [
-  unocss,
+  unocss
   // 其他配置
 ]
 ```
@@ -36,9 +44,7 @@ export default [
 
 ```json [.eslintrc]
 {
-  "extends": [
-    "@unocss"
-  ]
+  "extends": ["@unocss"]
 }
 ```
 
@@ -55,12 +61,15 @@ export default [
 
 ```json [.eslintrc]
 {
-  "extends": [
-    "@unocss"
-  ],
+  "extends": ["@unocss"],
   "rules": {
     "@unocss/<rule-name>": "warn", // 或 "error",
-    "@unocss/<another-rule-name>": ["warn" /* 或 "error" */, { /* 选项 */ }]
+    "@unocss/<another-rule-name>": [
+      "warn" /* 或 "error" */,
+      {
+        /* 选项 */
+      }
+    ]
   }
 }
 ```
@@ -75,8 +84,8 @@ You can customize messages for blocked rules to make them more informative and c
 export default defineConfig({
   blocklist: [
     ['bg-red-500', { message: 'Use bg-red-600 instead' }],
-    [/-auto$/, { message: s => `Use ${s.replace(/-auto$/, '-a')} instead` }], // -> "my-auto" is in blocklist: Use "my-a" instead
-  ],
+    [/-auto$/, { message: s => `Use ${s.replace(/-auto$/, '-a')} instead` }] // -> "my-auto" is in blocklist: Use "my-a" instead
+  ]
 })
 ```
 

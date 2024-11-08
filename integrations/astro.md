@@ -1,6 +1,10 @@
 ---
-title: UnoCSS Astro 集成
-description: Astro 的 UnoCSS 集成 (@unocss/astro)。
+title: UnoCSS Astro 集成 - 安装与配置指南
+description: 学习如何在 Astro 项目中集成 UnoCSS，包括安装步骤和样式重置配置。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, Astro, 集成, 安装, 配置
 ---
 
 # Astro 集成
@@ -10,15 +14,19 @@ description: Astro 的 UnoCSS 集成 (@unocss/astro)。
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D unocss
-  ```
-  ```bash [yarn]
-  yarn add -D unocss
-  ```
-  ```bash [npm]
-  npm install -D unocss
-  ```
+
+```bash [pnpm]
+pnpm add -D unocss
+```
+
+```bash [yarn]
+yarn add -D unocss
+```
+
+```bash [npm]
+npm install -D unocss
+```
+
 :::
 
 ```ts [astro.config.ts]
@@ -26,9 +34,7 @@ import { defineConfig } from 'astro/config'
 import UnoCSS from 'unocss/astro'
 
 export default defineConfig({
-  integrations: [
-    UnoCSS(),
-  ],
+  integrations: [UnoCSS()]
 })
 ```
 
@@ -47,15 +53,19 @@ export default defineConfig({
 默认情况下，不会注入[浏览器样式重置](/guide/style-reset)。要启用它，请安装 `@unocss/reset` 包：
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/reset
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/reset
-  ```
-  ```bash [npm]
-  npm install -D @unocss/reset
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/reset
+```
+
+```bash [yarn]
+yarn add -D @unocss/reset
+```
+
+```bash [npm]
+npm install -D @unocss/reset
+```
+
 :::
 
 并更新你的 `astro.config.ts`：
@@ -68,8 +78,8 @@ export default defineConfig({
   integrations: [
     UnoCSS({
       injectReset: true // 或重置文件的路径
-    }),
-  ],
+    })
+  ]
 })
 ```
 
@@ -78,24 +88,26 @@ export default defineConfig({
 此插件不附带任何默认预设。
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/astro
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/astro
-  ```
-  ```bash [npm]
-  npm install -D @unocss/astro
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/astro
+```
+
+```bash [yarn]
+yarn add -D @unocss/astro
+```
+
+```bash [npm]
+npm install -D @unocss/astro
+```
+
 :::
 
 ```ts [astro.config.mjs]
 import UnoCSS from '@unocss/astro'
 
 export default {
-  integrations: [
-    UnoCSS(),
-  ],
+  integrations: [UnoCSS()]
 }
 ```
 

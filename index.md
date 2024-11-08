@@ -1,6 +1,11 @@
 ---
 layout: home
-title: 'UnoCSS 中文文档'
+title: UnoCSS 中文文档 - 即时按需的原子级CSS引擎
+description: 获取最新版本的UnoCSS中文文档，了解强大的定制化功能和快速的性能
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, CSS引擎, 前端开发, 自定义样式
 
 hero:
   image:

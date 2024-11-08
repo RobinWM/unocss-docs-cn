@@ -1,6 +1,10 @@
 ---
-title: 文字排版预设
-description: 为 UnoCSS 提供一组文字段落类，可用于向原始 HTML 添加排版默认设置。
+title: 文字排版预设 - UnoCSS 的排版工具类
+description: 为 UnoCSS 提供一组文字段落类，可用于向原始 HTML 添加排版默认设置，提升文本美观度。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 文字排版, 排版工具, CSS, 前端开发
 outline: deep
 ---
 
@@ -13,15 +17,19 @@ outline: deep
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/preset-typography
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/preset-typography
-  ```
-  ```bash [npm]
-  npm install -D @unocss/preset-typography
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/preset-typography
+```
+
+```bash [yarn]
+yarn add -D @unocss/preset-typography
+```
+
+```bash [npm]
+npm install -D @unocss/preset-typography
+```
+
 :::
 
 ::: tip
@@ -30,6 +38,7 @@ outline: deep
 ```ts
 import { presetTypography } from 'unocss'
 ```
+
 :::
 
 ## 使用
@@ -46,28 +55,27 @@ export default defineConfig({
   presets: [
     presetAttributify(), // 如果使用属性模式，则必需
     presetUno(), // 必需
-    presetTypography(),
-  ],
+    presetTypography()
+  ]
 })
 ```
 
 ::: code-group
-  ```html [类]
-  <article class="text-base prose prose-truegray xl:text-xl">
-    {{ markdown }}
-    <p class="not-prose">
-      一些文本
-    </p>
-  </article>
-  ```
-  ```html [属性]
-  <article text-base prose prose-truegray xl="text-xl">
-    {{ markdown }}
-    <p class="not-prose">
-      一些文本
-    </p>
-  </article>
-  ```
+
+```html [类]
+<article class="text-base prose prose-truegray xl:text-xl">
+  {{ markdown }}
+  <p class="not-prose">一些文本</p>
+</article>
+```
+
+```html [属性]
+<article text-base prose prose-truegray xl="text-xl">
+  {{ markdown }}
+  <p class="not-prose">一些文本</p>
+</article>
+```
+
 :::
 
 ::: warning
@@ -105,14 +113,14 @@ export default defineConfig({
 
 ## 实用程序
 
-|  规则   |                                            此规则的样式                                                    |
-| :-----: | :--------------------------------------------------------------------------------------------------------: |
+|  规则   |                                                   此规则的样式                                                    |
+| :-----: | :---------------------------------------------------------------------------------------------------------------: |
 | `prose` | 请参阅[GitHub](https://github.com/unocss/unocss/blob/main/packages/preset-typography/src/preflights/default.ts)。 |
 
 ### 颜色
 
-| 规则（颜色）  |
-| ------------- |
+| 规则（颜色）    |
+| --------------- |
 | `prose-rose`    |
 | `prose-pink`    |
 | `prose-fuchsia` |
@@ -148,6 +156,7 @@ export default defineConfig({
   :::
 
 ### selectorName
+
 - **类型：** `string`
 - **默认值：** `prose`
 
@@ -158,12 +167,14 @@ export default defineConfig({
 :::
 
 ### cssExtend
+
 - **类型：** `Record<string, CSSObject>`
 - **默认值：** `undefined`
 
 使用 CSS 声明块扩展或覆盖 CSS 选择器。
 
 ### compatibility
+
 - **类型：** `TypographyCompatibilityOptions`
 - **默认值：** `undefined`
 
@@ -173,6 +184,7 @@ export default defineConfig({
 :::warning
 请注意，它会影响某些功能。
 :::
+
 ```ts
 interface TypographyCompatibilityOptions {
   noColonWhere?: boolean
@@ -195,18 +207,18 @@ export default defineConfig({
       selectorName: 'markdown', // 现在可以像 `markdown markdown-gray`、`not-markdown` 一样使用
       // cssExtend 是一个带有 CSS 选择器作为键和 CSS 声明块作为值的对象，就像编写普通的 CSS 一样。
       cssExtend: {
-        'code': {
-          color: '#8b5cf6',
+        code: {
+          color: '#8b5cf6'
         },
         'a:hover': {
-          color: '#f43f5e',
+          color: '#f43f5e'
         },
         'a:visited': {
-          color: '#14b8a6',
-        },
-      },
-    }),
-  ],
+          color: '#14b8a6'
+        }
+      }
+    })
+  ]
 })
 ```
 

@@ -1,7 +1,11 @@
 ---
-title: 图层
 icon: ph:stack-bold
-description: UnoCSS 允许您根据需要定义图层。
+title: UnoCSS 图层功能指南 - 自定义 CSS 优先级
+description: 探索 UnoCSS 的图层功能，学习如何定义和控制 CSS 的优先级，以提高样式的灵活性与可维护性。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, 图层, CSS 优先级, 自定义样式, 开发
 ---
 
 # 图层

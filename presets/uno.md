@@ -1,12 +1,16 @@
 ---
-title: Uno预设
-description: UnoCSS的默认预设（@unocss/preset-uno）。
+title: Uno预设 - UnoCSS 的默认工具类
+description: UnoCSS的默认预设（@unocss/preset-uno），提供常见的实用程序框架，兼容多种 CSS 库。
+head:
+  - - meta
+    - name: keywords
+      content: UnoCSS, Uno预设, 工具类, CSS, 前端开发
 outline: deep
 ---
 
-# Uno预设
+# Uno 预设
 
-UnoCSS的默认预设。目前等同于 [`@unocss/preset-wind`](/presets/wind)。
+UnoCSS 的默认预设。目前等同于 [`@unocss/preset-wind`](/presets/wind)。
 
 [源代码](https://github.com/unocss/unocss/tree/main/packages/preset-uno)
 
@@ -17,15 +21,19 @@ UnoCSS的默认预设。目前等同于 [`@unocss/preset-wind`](/presets/wind)�
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/preset-uno
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/preset-uno
-  ```
-  ```bash [npm]
-  npm install -D @unocss/preset-uno
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/preset-uno
+```
+
+```bash [yarn]
+yarn add -D @unocss/preset-uno
+```
+
+```bash [npm]
+npm install -D @unocss/preset-uno
+```
+
 :::
 
 ```ts [uno.config.ts]
@@ -33,9 +41,7 @@ import presetUno from '@unocss/preset-uno'
 import { defineConfig } from 'unocss'
 
 export default defineConfig({
-  presets: [
-    presetUno(),
-  ],
+  presets: [presetUno()]
 })
 ```
 
@@ -45,6 +51,7 @@ export default defineConfig({
 ```ts
 import { presetUno } from 'unocss'
 ```
+
 :::
 
 ## 使用
@@ -54,10 +61,18 @@ import { presetUno } from 'unocss'
 例如，`ml-3`（Tailwind CSS）、`ms-2`（Bootstrap）、`ma4`（Tachyons）和 `mt-10px`（Windi CSS）都是有效的。
 
 ```css
-.ma4 { margin: 1rem; }
-.ml-3 { margin-left: 0.75rem; }
-.ms-2 { margin-inline-start: 0.5rem; }
-.mt-10px { margin-top: 10px; }
+.ma4 {
+  margin: 1rem;
+}
+.ml-3 {
+  margin-left: 0.75rem;
+}
+.ms-2 {
+  margin-inline-start: 0.5rem;
+}
+.mt-10px {
+  margin-top: 10px;
+}
 ```
 
 ## 规则
