@@ -4,14 +4,14 @@ description: UnoCSS 的 Vite 插件 (@unocss/vite)
 outline: deep
 ---
 
-<!-- <script setup lang="ts">
+<script setup>
 import { examples } from '../.vitepress/content'
 
 const playgrounds = examples.reduce((acc, cur) => {
   acc[cur.name] = cur
   return acc
 }, {})
-</script> -->
+</script>
 
 # Vite 插件
 
