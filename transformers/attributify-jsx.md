@@ -2,7 +2,7 @@
 title: 属性化 JSX 转换器 - 支持无值属性化的 UnoCSS
 description: 了解如何在 JSX/TSX 中使用无值属性化 (@unocss/transformer-attributify-jsx)，提升你的开发效率
 head:
-  - meta:
+  -- meta:
       name: keywords
       content: 属性化, JSX, UnoCSS, 前端开发
 ---
