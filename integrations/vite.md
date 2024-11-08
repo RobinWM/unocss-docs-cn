@@ -1,17 +1,17 @@
 ---
 title: UnoCSS Vite 插件
-description: UnoCSS 的 Vite 插件 (@unocss/vite)。
+description: UnoCSS 的 Vite 插件 (@unocss/vite)
 outline: deep
 ---
 
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import { examples } from '../.vitepress/content'
 
 const playgrounds = examples.reduce((acc, cur) => {
   acc[cur.name] = cur
   return acc
 }, {})
-</script>
+</script> -->
 
 # Vite 插件
 
@@ -20,15 +20,19 @@ Vite 插件随 `unocss` 包一起发布。
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D unocss
-  ```
-  ```bash [yarn]
-  yarn add -D unocss
-  ```
-  ```bash [npm]
-  npm install -D unocss
-  ```
+
+```bash [pnpm]
+pnpm add -D unocss
+```
+
+```bash [yarn]
+yarn add -D unocss
+```
+
+```bash [npm]
+npm install -D unocss
+```
+
 :::
 
 安装插件：
@@ -38,9 +42,7 @@ import UnoCSS from 'unocss/vite'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  plugins: [
-    UnoCSS(),
-  ],
+  plugins: [UnoCSS()]
 })
 ```
 
@@ -124,10 +126,7 @@ import React from '@vitejs/plugin-react'
 import UnoCSS from 'unocss/vite'
 
 export default {
-  plugins: [
-    React(),
-    UnoCSS(),
-  ],
+  plugins: [React(), UnoCSS()]
 }
 ```
 
@@ -140,10 +139,7 @@ import React from '@vitejs/plugin-react'
 import UnoCSS from 'unocss/vite'
 
 export default {
-  plugins: [
-    UnoCSS(),
-    React(),
-  ],
+  plugins: [UnoCSS(), React()]
 }
 ```
 
@@ -160,10 +156,7 @@ import Preact from '@preact/preset-vite'
 import UnoCSS from 'unocss/vite'
 
 export default {
-  plugins: [
-    UnoCSS(),
-    Preact(),
-  ],
+  plugins: [UnoCSS(), Preact()]
 }
 ```
 
@@ -174,10 +167,7 @@ import Prefresh from '@prefresh/vite'
 import UnoCSS from 'unocss/vite'
 
 export default {
-  plugins: [
-    UnoCSS(),
-    Prefresh(),
-  ],
+  plugins: [UnoCSS(), Prefresh()]
 }
 ```
 
@@ -203,13 +193,11 @@ import UnoCSS from 'unocss/vite'
 export default {
   plugins: [
     UnoCSS({
-      extractors: [
-        extractorSvelte(),
-      ],
+      extractors: [extractorSvelte()]
       /* more options */
     }),
-    svelte(),
-  ],
+    svelte()
+  ]
 }
 ```
 
@@ -230,13 +218,11 @@ import UnoCSS from 'unocss/vite'
 const config = {
   plugins: [
     UnoCSS({
-      extractors: [
-        extractorSvelte(),
-      ],
+      extractors: [extractorSvelte()]
       /* more options */
     }),
-    sveltekit(),
-  ],
+    sveltekit()
+  ]
 }
 ```
 
@@ -258,10 +244,10 @@ import UnoCSS from 'unocss/vite'
 export default {
   plugins: [
     UnoCSS({
-      mode: 'shadow-dom',
+      mode: 'shadow-dom'
       /* more options */
-    }),
-  ],
+    })
+  ]
 }
 ```
 
@@ -312,11 +298,11 @@ export default {
       mode: 'shadow-dom',
       shortcuts: [
         { 'cool-blue': 'bg-blue-500 text-white' },
-        { 'cool-green': 'bg-green-500 text-black' },
-      ],
+        { 'cool-green': 'bg-green-500 text-black' }
+      ]
       /* more options */
-    }),
-  ],
+    })
+  ]
 }
 ```
 
@@ -346,6 +332,7 @@ template.innerHTML = `
 </div>
 `
 ```
+
 <ContentExample :item="playgrounds['vite-lit']"  class="Link" integrations />
 
 ### Solid
@@ -361,8 +348,8 @@ export default {
     UnoCSS({
       /* options */
     }),
-    solidPlugin(),
-  ],
+    solidPlugin()
+  ]
 }
 ```
 
@@ -378,10 +365,7 @@ import { defineConfig } from 'vite'
 import Elm from 'vite-plugin-elm'
 
 export default defineConfig({
-  plugins: [
-    Elm(),
-    UnoCSS(),
-  ],
+  plugins: [Elm(), UnoCSS()]
 })
 ```
 
@@ -404,14 +388,14 @@ export default defineConfig({
     Unocss({
       presets: [presetUno()],
       legacy: {
-        renderModernChunks: false,
-      },
+        renderModernChunks: false
+      }
     }),
     legacy({
       targets: ['defaults', 'not IE 11'],
-      renderModernChunks: false,
-    }),
-  ],
+      renderModernChunks: false
+    })
+  ]
 })
 ```
 
