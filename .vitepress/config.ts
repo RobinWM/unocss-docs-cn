@@ -9,7 +9,7 @@ import { version } from '../package.json'
 const ogUrl = 'https://unocss.dev/'
 const ogImage = `${ogUrl}og.png`
 const title = 'UnoCSS'
-const description = 'Unocss中文文档'
+const description = 'Unocss中文文档 | Unocss中文网'
 const links = []
 const Guides: DefaultTheme.NavItemWithLink[] = [
   { text: '开始使用', link: '/guide/' },
