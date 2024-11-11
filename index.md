@@ -6,6 +6,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, CSS引擎, 前端开发, 自定义样式
+  - - link
+    - rel: canonical
+      href: https://unocss.net
 
 hero:
   image:

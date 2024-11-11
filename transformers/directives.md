@@ -1,6 +1,10 @@
 ---
-title: 指令转换器
-description: UnoCSS 的指令转换器，用于 @apply、@screen 和 theme() 指令 (@unocss/transformer-directives)。
+title: 指令转换器 - @unocss/transformer-directives 使用指南
+description: 本文介绍 UnoCSS 的指令转换器，用于 @apply、@screen 和 theme() 指令，提供安装和用法示例。
+head:
+  - - meta
+    - name: keywords
+      content: 指令转换器, @unocss, transformer-directives, CSS, 前端开发
 outline: deep
 ---
 
@@ -11,15 +15,19 @@ UnoCSS 的指令转换器，用于 `@apply`、`@screen` 和 `theme()` 指令：`
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/transformer-directives
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/transformer-directives
-  ```
-  ```bash [npm]
-  npm install -D @unocss/transformer-directives
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/transformer-directives
+```
+
+```bash [yarn]
+yarn add -D @unocss/transformer-directives
+```
+
+```bash [npm]
+npm install -D @unocss/transformer-directives
+```
+
 :::
 
 ```ts [uno.config.ts]
@@ -28,9 +36,7 @@ import { defineConfig } from 'unocss'
 
 export default defineConfig({
   // ...
-  transformers: [
-    transformerDirectives(),
-  ],
+  transformers: [transformerDirectives()]
 })
 ```
 
@@ -40,6 +46,7 @@ export default defineConfig({
 ```ts
 import { transformerDirectives } from 'unocss'
 ```
+
 :::
 
 ## 用法
@@ -78,7 +85,7 @@ import { transformerDirectives } from 'unocss'
 ```js
 transformerDirectives({
   // 默认值
-  applyVariable: ['--at-apply', '--uno-apply', '--uno'],
+  applyVariable: ['--at-apply', '--uno-apply', '--uno']
   // 或者禁用：
   // applyVariable: false
 })

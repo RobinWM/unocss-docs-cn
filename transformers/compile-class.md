@@ -1,6 +1,10 @@
 ---
-title: 编译类转换器
-description: 将一组类编译成一个类 (@unocss/transformer-compile-class)
+title: 编译类转换器 - @unocss/transformer-compile-class 使用指南
+description: 本文介绍如何使用 @unocss/transformer-compile-class 将一组类编译成一个类，并提供安装和用法示例。
+head:
+  - - meta
+    - name: keywords
+      content: 编译类转换器, @unocss, transformer-compile-class, CSS, 前端开发
 outline: deep
 ---
 
@@ -13,15 +17,19 @@ outline: deep
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/transformer-compile-class
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/transformer-compile-class
-  ```
-  ```bash [npm]
-  npm install -D @unocss/transformer-compile-class
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/transformer-compile-class
+```
+
+```bash [yarn]
+yarn add -D @unocss/transformer-compile-class
+```
+
+```bash [npm]
+npm install -D @unocss/transformer-compile-class
+```
+
 :::
 
 ```ts [uno.config.ts]
@@ -30,9 +38,7 @@ import { defineConfig } from 'unocss'
 
 export default defineConfig({
   // ...
-  transformers: [
-    transformerCompileClass(),
-  ],
+  transformers: [transformerCompileClass()]
 })
 ```
 
@@ -42,6 +48,7 @@ export default defineConfig({
 ```ts
 import { transformerCompileClass } from 'unocss'
 ```
+
 :::
 
 ## 用法
@@ -52,7 +59,7 @@ import { transformerCompileClass } from 'unocss'
 
 ```html
 <div class=":uno: text-center sm:text-left">
-  <div class=":uno: text-sm font-bold hover:text-red"/>
+  <div class=":uno: text-sm font-bold hover:text-red" />
 </div>
 ```
 
@@ -60,7 +67,7 @@ import { transformerCompileClass } from 'unocss'
 
 ```html
 <div class="uno-qlmcrp">
-  <div class="uno-0qw2gr"/>
+  <div class="uno-0qw2gr" />
 </div>
 ```
 

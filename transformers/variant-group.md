@@ -1,6 +1,10 @@
 ---
-title: 变体组转换器
-description: 启用 UnoCSS 的 Windi CSS 变体组功能 (@unocss/transformer-variant-group)
+title: 变体组转换器 - 启用 UnoCSS 的 Windi CSS 变体组功能
+description: 本文介绍如何启用 UnoCSS 的 Windi CSS 变体组功能 (@unocss/transformer-variant-group)，并提供安装和用法示例。
+head:
+  - - meta
+    - name: keywords
+      content: 变体组转换器, @unocss, transformer-variant-group, Windi CSS, 前端开发
 ---
 
 # 变体组转换器
@@ -10,15 +14,19 @@ description: 启用 UnoCSS 的 Windi CSS 变体组功能 (@unocss/transformer-va
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/transformer-variant-group
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/transformer-variant-group
-  ```
-  ```bash [npm]
-  npm install -D @unocss/transformer-variant-group
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/transformer-variant-group
+```
+
+```bash [yarn]
+yarn add -D @unocss/transformer-variant-group
+```
+
+```bash [npm]
+npm install -D @unocss/transformer-variant-group
+```
+
 :::
 
 ```ts [uno.config.ts]
@@ -27,9 +35,7 @@ import { defineConfig } from 'unocss'
 
 export default defineConfig({
   // ...
-  transformers: [
-    transformerVariantGroup(),
-  ],
+  transformers: [transformerVariantGroup()]
 })
 ```
 
@@ -39,18 +45,19 @@ export default defineConfig({
 ```ts
 import { transformerVariantGroup } from 'unocss'
 ```
+
 :::
 
 ## 用法
 
 ```html
-<div class="hover:(bg-gray-400 font-medium) font-(light mono)"/>
+<div class="hover:(bg-gray-400 font-medium) font-(light mono)" />
 ```
 
 将被转换为：
 
 ```html
-<div class="hover:bg-gray-400 hover:font-medium font-light font-mono"/>
+<div class="hover:bg-gray-400 hover:font-medium font-light font-mono" />
 ```
 
 ## 许可证
