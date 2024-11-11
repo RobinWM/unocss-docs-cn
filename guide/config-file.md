@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 配置文件, uno.config.ts, 最佳实践, IDE 集成
+  - - link
+    - rel: canonical
+      href: https://unocss.net/guide/config-file
 ---
 
 # 配置文件

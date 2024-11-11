@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 规则, 自定义规则, 静态规则, 动态规则, CSS
+  - - link
+    - rel: canonical
+      href: https://unocss.net/config/rules      
 ---
 
 # 规则

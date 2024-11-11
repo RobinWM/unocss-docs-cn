@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 样式重置, Normalize.css, sanitize.css, CSS 灵活性
+  - - link
+    - rel: canonical
+      href: https://unocss.net/guide/style-reset      
 outline: deep
 ---
 

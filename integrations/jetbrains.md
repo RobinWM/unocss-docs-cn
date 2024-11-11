@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, JetBrains, 插件, 安装, 特性
+  - - link
+    - rel: canonical
+      href: https://unocss.net/integrations/jetbrains
 ---
 
 # JetBrains IDEs 插件

@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, Tagify 预设, CSS, HTML, 前端开发
+  - - link
+    - rel: canonical
+      href: https://unocss.net/presets/tagify
 outline: deep
 ---
 

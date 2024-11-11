@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, Web字体, 字体支持, Google Fonts, CSS
+  - - link
+    - rel: canonical
+      href: https://unocss.net/presets/web-fonts
 outline: deep
 ---
 

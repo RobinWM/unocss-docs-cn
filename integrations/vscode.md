@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, VS Code, 扩展, 配置, 图标预设
+  - - link
+    - rel: canonical
+      href: https://unocss.net/integrations/vscode
 ---
 
 # VS Code 扩展

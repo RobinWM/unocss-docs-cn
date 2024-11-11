@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 预设, 自定义框架, 配置, 规则
+  - - link
+    - rel: canonical
+      href: https://unocss.net/guide/presets      
 outline: deep
 ---
 

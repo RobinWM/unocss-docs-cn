@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 自动完成, VS Code, 规则, 示例
+  - - link
+    - rel: canonical
+      href: https://unocss.net/tools/autocomplete
 ---
 
 # 自动完成
@@ -18,9 +21,7 @@ UnoCSS 的自动完成工具：`@unocss/autocomplete`。这已经嵌入在<a hre
 像这样的静态规则将无需任何配置即可正常工作。
 
 ```ts
-rules: [
-  ['flex', { display: 'flex' }]
-]
+rules: [['flex', { display: 'flex' }]]
 ```
 
 ### 动态规则
@@ -32,8 +33,8 @@ rules: [
   [
     /^m-(\d)$/,
     ([, d]) => ({ margin: `${d / 4}rem` }),
-    { autocomplete: 'm-<num>' }, // <-- 这里
-  ],
+    { autocomplete: 'm-<num>' } // <-- 这里
+  ]
 ]
 ```
 

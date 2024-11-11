@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, Windi CSS, Tailwind CSS, 原子 CSS, 可扩展性
+  - - link
+    - rel: canonical
+      href: https://unocss.net/guide/why      
 outline: deep
 ---
 

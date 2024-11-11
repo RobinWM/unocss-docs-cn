@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, CDN, 运行时, CSS-in-JS, FOUC
+  - - link
+    - rel: canonical
+      href: https://unocss.net/integrations/runtime
 outline: deep
 ---
 

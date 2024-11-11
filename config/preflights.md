@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 预检, 原始 CSS, 主题, 自定义样式
+  - - link
+    - rel: canonical
+      href: https://unocss.net/config/preflights      
 ---
 
 # 预检

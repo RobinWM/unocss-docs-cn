@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 主题, Tailwind, Windi, 样式定制
+  - - link
+    - rel: canonical
+      href: https://unocss.net/config/theme      
 ---
 
 # 主题

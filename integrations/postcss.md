@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, PostCSS, 插件, @apply, @screen, theme()
+  - - link
+    - rel: canonical
+      href: https://unocss.net/integrations/postcss
 outline: deep
 ---
 

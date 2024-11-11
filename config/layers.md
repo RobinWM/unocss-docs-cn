@@ -6,6 +6,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 图层, CSS 优先级, 自定义样式, 开发
+  - - link
+    - rel: canonical
+      href: https://unocss.net/config/layers      
 ---
 
 # 图层

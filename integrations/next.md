@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, Next.js, 安装, 配置, 热模块重载
+  - - link
+    - rel: canonical
+      href: https://unocss.net/integrations/next
 ---
 
 # Next.js

@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 快捷方式, Windi CSS, 规则组合, 开发效率
+  - - link
+    - rel: canonical
+      href: https://unocss.net/config/shortcuts      
 ---
 
 # 快捷方式

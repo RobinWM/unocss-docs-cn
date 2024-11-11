@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 提取器, 工具使用情况, 自定义提取器, 开发
+  - - link
+    - rel: canonical
+      href: https://unocss.net/config/extractors      
 ---
 
 # 提取器

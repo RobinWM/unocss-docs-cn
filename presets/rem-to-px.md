@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, Rem to px, 工具类, CSS, 前端开发
+  - - link
+    - rel: canonical
+      href: https://unocss.net/presets/rem-to-px
 outline: deep
 ---
 

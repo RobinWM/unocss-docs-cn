@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 变体, CSS, 自定义规则, 开发
+  - - link
+    - rel: canonical
+      href: https://unocss.net/config/variants
 ---
 
 # 变体

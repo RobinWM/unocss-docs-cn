@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, Svelte, 提取器, class 指令, CSS 生成
+  - - link
+    - rel: canonical
+      href: https://unocss.net/extractors/svelte      
 ---
 
 # Svelte 提取器

@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 原子 CSS, 自定义工具类, CSS 预设
+  - - link
+    - rel: canonical
+      href: https://unocss.net/guide/
 ---
 
 ## 什么是 UnoCSS？

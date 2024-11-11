@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, Legacy Compat, 旧版兼容, CSS, 前端开发
+  - - link
+    - rel: canonical
+      href: https://unocss.net/presets/legacy-compat
 outline: deep
 ---
 

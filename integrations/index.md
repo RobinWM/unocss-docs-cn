@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 集成, 框架, 工具, 示例
+  - - link
+    - rel: canonical
+      href: https://unocss.net/integrations/
 ---
 
 # 集成

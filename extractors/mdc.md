@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, MDC, 提取器, Markdown Components, CSS 生成
+  - - link
+    - rel: canonical
+      href: https://unocss.net/extractors/mdc      
 ---
 
 # MDC 提取器

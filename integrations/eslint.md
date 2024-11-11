@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, ESLint, 配置, 规则, 安装
+  - - link
+    - rel: canonical
+      href: https://unocss.net/integrations/eslint
 ---
 
 # ESLint 配置

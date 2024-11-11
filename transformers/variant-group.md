@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: 变体组转换器, @unocss, transformer-variant-group, Windi CSS, 前端开发
+  - - link
+    - rel: canonical
+      href: https://unocss.net/transformers/variant-group
 ---
 
 # 变体组转换器

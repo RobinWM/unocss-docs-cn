@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 图标预设, CSS, Iconify, 前端开发
+  - - link
+    - rel: canonical
+      href: https://unocss.net/presets/icons
 outline: deep
 ---
 

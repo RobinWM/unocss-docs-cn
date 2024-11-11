@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, Wind 预设, CSS, Tailwind CSS, Windi CSS
+  - - link
+    - rel: canonical
+      href: https://unocss.net/presets/wind
 outline: deep
 ---
 

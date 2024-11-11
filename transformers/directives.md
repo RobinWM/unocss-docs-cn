@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: 指令转换器, @unocss, transformer-directives, CSS, 前端开发
+  - - link
+    - rel: canonical
+      href: https://unocss.net/transformers/directives
 outline: deep
 ---
 

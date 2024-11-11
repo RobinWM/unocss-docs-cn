@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, Transformers, 源代码转换, 开发, 约定
+  - - link
+    - rel: canonical
+      href: https://unocss.net/config/transformers      
 ---
 
 # Transformers（转换器）

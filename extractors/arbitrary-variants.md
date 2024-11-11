@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 任意变体, 提取器, 实用程序, CSS 生成
+  - - link
+    - rel: canonical
+      href: https://unocss.net/extractors/arbitrary-variants
 ---
 
 # 任意变体提取器

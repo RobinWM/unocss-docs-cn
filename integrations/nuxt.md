@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, Nuxt, 模块, 安装, 配置
+  - - link
+    - rel: canonical
+      href: https://unocss.net/integrations/nuxt
 ---
 
 # Nuxt 模块

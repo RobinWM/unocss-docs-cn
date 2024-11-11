@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, Uno预设, 工具类, CSS, 前端开发
+  - - link
+    - rel: canonical
+      href: https://unocss.net/presets/uno
 outline: deep
 ---
 

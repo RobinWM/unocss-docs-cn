@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, Astro, 集成, 安装, 配置
+  - - link
+    - rel: canonical
+      href: https://unocss.net/integrations/astro
 ---
 
 # Astro 集成

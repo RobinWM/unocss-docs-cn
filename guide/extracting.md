@@ -6,6 +6,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 提取, CSS 生成, 构建工具, 实用程序用法
+  - - link
+    - rel: canonical
+      href: https://unocss.net/guide/extracting     
 ---
 
 # 提取

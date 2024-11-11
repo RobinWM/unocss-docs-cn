@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 检查器, UI, Vite, CSS 规则
+  - - link
+    - rel: canonical
+      href: https://unocss.net/tools/inspector
 ---
 
 # 检查器

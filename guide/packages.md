@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 包, 预设, 集成, CLI
+  - - link
+    - rel: canonical
+      href: https://unocss.net/guide/packages      
 outline: deep
 ---
 

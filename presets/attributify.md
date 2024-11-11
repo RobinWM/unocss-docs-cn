@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, Attributify, 预设, CSS, 前端开发
+  - - link
+    - rel: canonical
+      href: https://unocss.net/presets/attributify
 outline: deep
 ---
 

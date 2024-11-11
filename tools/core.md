@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 核心引擎, 原子 CSS, 安装, 用法
+  - - link
+    - rel: canonical
+      href: https://unocss.net/tools/core      
 ---
 
 # Core

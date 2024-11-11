@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 预设, 自定义配置, Preset, 开发
+  - - link
+    - rel: canonical
+      href: https://unocss.net/config/presets      
 ---
 
 # 预设

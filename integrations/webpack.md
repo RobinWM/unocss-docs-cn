@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, Webpack, 插件, 安装, 使用
+  - - link
+    - rel: canonical
+      href: https://unocss.net/integrations/webpack
 outline: deep
 ---
 

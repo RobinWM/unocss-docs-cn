@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 命令行工具, CLI, 安装, 使用
+  - - link
+    - rel: canonical
+      href: https://unocss.net/integrations/cli
 ---
 
 # 命令行界面

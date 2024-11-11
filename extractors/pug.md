@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, Pug, 提取器, 模板, CSS 生成
+  - - link
+    - rel: canonical
+      href: https://unocss.net/extractors/pug      
 ---
 
 # Pug 提取器

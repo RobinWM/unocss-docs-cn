@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 自动完成, 智能建议, 开发效率, VS Code 扩展
+  - - link
+    - rel: canonical
+      href: https://unocss.net/config/autocomplete
 ---
 
 # 自动完成

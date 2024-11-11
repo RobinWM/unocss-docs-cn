@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, Vite, 插件, 安装, 配置
+  - - link
+    - rel: canonical
+      href: https://unocss.net/integrations/vite
 outline: deep
 ---
 

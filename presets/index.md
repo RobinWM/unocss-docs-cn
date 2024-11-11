@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 预设, 转换器, 提取器, CSS
+  - - link
+    - rel: canonical
+      href: https://unocss.net/presets/
 ---
 
 # 官方包

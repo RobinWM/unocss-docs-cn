@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: 编译类转换器, @unocss, transformer-compile-class, CSS, 前端开发
+  - - link
+    - rel: canonical
+      href: https://unocss.net/transformers/compile-class
 outline: deep
 ---
 

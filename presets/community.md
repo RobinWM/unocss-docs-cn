@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 社区预设, 工具, 转换器, 前端开发
+  - - link
+    - rel: canonical
+      href: https://unocss.net/presets/community
 ---
 
 # 社区预设

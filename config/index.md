@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 配置, 原子 CSS, 开发
+  - - link
+    - rel: canonical
+      href: https://unocss.net/config/
 ---
 
 # 配置

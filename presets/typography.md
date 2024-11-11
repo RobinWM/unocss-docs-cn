@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, 文字排版, 排版工具, CSS, 前端开发
+  - - link
+    - rel: canonical
+      href: https://unocss.net/presets/typography
 outline: deep
 ---
 

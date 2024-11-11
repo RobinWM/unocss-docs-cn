@@ -5,6 +5,9 @@ head:
   - - meta
     - name: keywords
       content: UnoCSS, Svelte, 作用域, Vite 插件, 预处理器
+  - - link
+    - rel: canonical
+      href: https://unocss.net/integrations/svelte-scoped
 outline: deep
 ---
 
