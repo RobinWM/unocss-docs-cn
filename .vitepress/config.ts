@@ -149,20 +149,20 @@ const Nav: DefaultTheme.NavItem[] = [
   //   link: '/about/'
   // },
   { text: '交互式文档', link: `${ogUrl}interactive/`, target: '_blank' },
-  { text: '演练场', link: `${ogUrl}play/`, target: '_blank' },
-  {
-    text: `v${version}`,
-    items: [
-      {
-        text: '发行说明',
-        link: 'https://github.com/unocss/unocss/releases'
-      },
-      {
-        text: '贡献',
-        link: 'https://github.com/unocss/unocss/blob/main/CONTRIBUTING.md'
-      }
-    ]
-  }
+  { text: '演练场', link: `${ogUrl}play/`, target: '_blank' }
+  // {
+  //   text: `v${version}`,
+  //   items: [
+  //     {
+  //       text: '发行说明',
+  //       link: 'https://github.com/unocss/unocss/releases'
+  //     },
+  //     {
+  //       text: '贡献',
+  //       link: 'https://github.com/unocss/unocss/blob/main/CONTRIBUTING.md'
+  //     }
+  //   ]
+  // }
 ]
 
 const SidebarGuide: DefaultTheme.SidebarItem[] = [
