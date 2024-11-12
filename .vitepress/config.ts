@@ -290,6 +290,14 @@ export default defineConfig({
       }
     ],
     ['script', { src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4404202636462971', async: 'async', crossorigin: 'anonymous' }],
+    [
+      'script',
+      {
+        defer: true,
+        'data-domain': 'unocss.net',
+        src: 'https://plausible.io/js/script.js',
+      },
+    ],
     // [
     //   'script',
     //   {},
