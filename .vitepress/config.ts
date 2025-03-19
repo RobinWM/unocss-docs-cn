@@ -156,6 +156,10 @@ const Nav: DefaultTheme.NavItem[] = [
       {
         link: 'https://gokuai.top/',
         text: 'Goku AI Video Generator'
+      },
+      {
+        link: 'https://backlinkdirs.com/',
+        text: 'Backlink Dirs'
       }
     ]
   }
