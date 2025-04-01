@@ -160,7 +160,11 @@ const Nav: DefaultTheme.NavItem[] = [
       {
         link: 'https://backlinkdirs.com/',
         text: 'Backlink Dirs'
-      }
+      },
+      {
+        link: 'https://ghibliai.design/',
+        text: 'Ghibli AI'
+      },
     ]
   }
   // {
