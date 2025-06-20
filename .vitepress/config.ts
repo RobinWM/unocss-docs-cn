@@ -154,16 +154,16 @@ const Nav: DefaultTheme.NavItem[] = [
     text: '友情链接',
     items: [
       {
-        link: 'https://gokuai.top/',
-        text: 'Goku AI Video Generator'
+        link: 'https://aidirs.org/',
+        text: 'AI Diretory'
       },
       {
         link: 'https://backlinkdirs.com/',
         text: 'Backlink Dirs'
       },
       {
-        link: 'https://ghibliai.design/',
-        text: 'Ghibli AI'
+        link: 'https://labubuwallpaper.pro/',
+        text: 'Labubu Wallpaper'
       },
     ]
   }
